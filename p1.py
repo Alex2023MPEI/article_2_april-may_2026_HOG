@@ -2,7 +2,8 @@
 #Вторая версия этого кода [https://github.com/Alex2023MPEI/Yandex_ML_training_2023_Final_contest_Regression/blob/main/p1.py] была написана для задачи (Final contest ML тренировки 2023, Финальное соревнование): https://contest.yandex.ru/contest/56809/problems/ дата: 2025 сентябрь-ноябрь
 #Это третья версия, написана для получения экспериментальных данных при проведении исследований по теме "Система автоматического опредеения и удержания объекта в фокусе" дата: 2026 март-апрель.
 import numpy as np;import pandas as pd;
-import datetime,json,math,os,pathlib,pickle,pprint,random,string,time,typing;
+import copy,datetime,json,math,os,pathlib,pickle,pprint,random,string,time,typing;
+from pathlib import Path;
 from sklearn.preprocessing import MaxAbsScaler,MinMaxScaler,RobustScaler,StandardScaler;
 from sklearn.model_selection import train_test_split,KFold,StratifiedKFold,GroupKFold,StratifiedGroupKFold;
 from sklearn.impute import KNNImputer,SimpleImputer;
@@ -46,6 +47,15 @@ AnyFeatureSelector:typing.TypeAlias=GenericUnivariateSelect|RFE|RFECV|SelectFdr|
 AnyModelClassifier:typing.TypeAlias=LogisticRegression|PassiveAggressiveClassifier|Perceptron|RidgeClassifier|SGDClassifier|AdaBoostClassifier|BaggingClassifier|ExtraTreesClassifier|GradientBoostingClassifier|HistGradientBoostingClassifier|RandomForestClassifier|XGBClassifier|LGBMClassifier|XGBRFClassifier|DaskLGBMClassifier|GaussianProcessClassifier|KNeighborsClassifier|RadiusNeighborsClassifier|MLPClassifier|NearestCentroid|MultinomialNB|ComplementNB|BernoulliNB|GaussianNB;
 AnyModelRegressor:typing.TypeAlias=LinearRegression|Ridge|SGDRegressor|ElasticNet|Lasso|LassoLarsIC|ARDRegression|OrthogonalMatchingPursuit|BayesianRidge|MultiTaskElasticNet|MultiTaskLasso|HuberRegressor|QuantileRegressor|RANSACRegressor|Lars|TheilSenRegressor|GammaRegressor|PoissonRegressor|TweedieRegressor|PassiveAggressiveRegressor|LassoLars|AdaBoostRegressor|BaggingRegressor|ExtraTreesRegressor|GradientBoostingRegressor|HistGradientBoostingRegressor|RandomForestRegressor|XGBRegressor|XGBRFRegressor|LGBMRegressor|DaskLGBMRegressor|GaussianProcessRegressor|KNeighborsRegressor|RadiusNeighborsRegressor|MLPRegressor;
 AnyModel:typing.TypeAlias=AnyModelClassifier|AnyModelRegressor;
+
+def longer_str(s:str,add:str,n:int)->str:
+    """Функция возвращает строку s, дополненную символами add до длины n. Если len(s)>=n, то возвращается s."""
+    if len(s)>=n:return s;
+    else:
+        if len(add)==0:add=' ';
+        times_add:int=(n-len(s))//len(add)+1;
+        buf_s:str=s+(add*times_add);
+        return buf_s[:n];
 
 def true_with_prob(p:float=0.5)->bool:
     """Функция возвращает True с вероятностью p и False с вероятностью q=1-p"""
@@ -154,8 +164,9 @@ def generate_hidden_layer_sizes_tuple(n_layers:int=3,n_in:int=100,n_out:int=5,al
     return tuple(sizes_lst);
 
 #ОЧЕНЬ ПОЛЕЗНАЯ ФУНКЦИЯ (список словарей в Python в некотором смысле аналогичен массиву записей в Delphi)
-def read_csv(filename:str,delimiter_values:str=',')->list[dict]:#должна возвращать список словарей
-    with open(file=filename,mode='rt',encoding='utf-8')as f:lst_lines=[s.rstrip()for s in f.readlines()];
+def read_csv(filename:str,delimiter_values:str=',')->list[dict[str,str]]:#должна возвращать список словарей
+    """Функция считывает содержимое csv файла в список словарей и возвращает этот список"""
+    with open(file=filename,mode='rt',encoding='utf-8')as f:lst_lines:list[str]=[s.rstrip()for s in f.readlines()];
     lst_of_dicts:list[dict]=[];#Изначально список словарей пустой
     lst_keys:list[str]=lst_lines[0].split(delimiter_values);#Первая строка csv файла - это ключи
     lst_values:list[list[str]]=[lst_lines[line_num].split(delimiter_values)for line_num in range(1,len(lst_lines))];
@@ -163,12 +174,35 @@ def read_csv(filename:str,delimiter_values:str=',')->list[dict]:#должна в
     return(lst_of_dicts);
 #И обратная ей функция (записывает список словарей в csv файл)
 def write_csv(filename:str,delimiter_values:str,lst_of_dicts:list[dict])->None:#должна принимать список словарей и записывать в *.csv
+    """Функция записывает список словарей в csv файл"""
     s:str=delimiter_values.join(list(lst_of_dicts[0].keys()))+'\n';#Сначала записываем в строку ключи (названия столбцов)
     for d in lst_of_dicts:s=s+delimiter_values.join(d.values())+'\n';#Затем в цикле добавляем в строку значения
     with open(file=filename,mode='wt',encoding='utf-8')as f:f.write(s);
     return None;
 
-def analize_log_pipelines_csv(log_pipelines_csv_file_name:str='log_pipelines.csv',score_valid_mean_threshold_min:float=None,score_valid_mean_threshold_max:float=None,score_test_threshold_min:float=None,score_test_threshold_max:float=None,n_features_selected_randomly_threshold_min:int=None,n_features_selected_randomly_threshold_max:int=None,pipeline_file_size_theshold_min:int=None,pipeline_file_size_theshold_max:int=None)->None:
+def list_of_dicts_to_txt_table(list_of_dicts:list[dict],n_rows_per_header:int=20,delimiter:str='|')->list[str]:
+    """Функция принимает непустой список словарей (каждый словарь списка имеет одинаковый набор ключей) и возвращает список строк для удобного просмотра в txt файле.
+    Если строк много, то каждые n_rows_per_header строк снова добавляется заголовок."""
+    lst_dcts:list[dict]=copy.deepcopy(list_of_dicts);
+    for d in lst_dcts:#Приводим значения всех словарей типу str
+        for k in d.keys():d[k]=str(d[k]);
+    #Для каждого ключа определяем максимальную длину его значений из всего списка lst_dcts:
+    max_lens:dict[str,int]={};
+    for k in lst_dcts[0].keys():
+        max_lens[k]=max([len(lst_dcts[i][k])for i in range(len(lst_dcts))]);
+        if len(str(k))>max_lens[k]:max_lens[k]=len(str(k));#Учитываем длины ключей, то есть названия столбцов таблицы
+    max_num_len:int=len(str(len(lst_dcts)+1));#Максимальная длина номеров, которые ставим в конце строк
+    if max_num_len<3:max_num_len=3;#num
+    num_strings:list[str]=[longer_str(s=str(i+1),add=' ',n=max_num_len)for i in range(len(lst_dcts))];
+    s_headers:str=f'num{delimiter}'+delimiter.join([longer_str(s=str(k),add=' ',n=max_lens[k])for k in max_lens.keys()]);#Создание строки с заголовками
+    res_lst:list[str]=[];
+    for i in range(len(lst_dcts)):#Создание строк со значениями из словарей (каждый словарь на одной строке)
+        buf_str:str=num_strings[i]+delimiter+delimiter.join([longer_str(s=str(lst_dcts[i][k]),add=' ',n=max_lens[k])for k in max_lens.keys()]);
+        if i%n_rows_per_header==0:res_lst.append(s_headers);
+        res_lst.append(buf_str);
+    return res_lst;
+
+def analize_log_pipelines_csv(log_pipelines_csv_file_name:str='log_pipelines.csv',score_valid_mean_threshold_min:float=None,score_valid_mean_threshold_max:float=None,score_test_threshold_min:float=None,score_test_threshold_max:float=None,n_features_selected_randomly_threshold_min:int=None,n_features_selected_randomly_threshold_max:int=None,pipeline_file_size_threshold_min:int=None,pipeline_file_size_threshold_max:int=None)->None:
     """Анализ csv файла для определения id лучших пайплайнов (для которых выполняются заданные ограничения)"""
     log_pipelines_dicts_list:list[dict]=read_csv(filename=log_pipelines_csv_file_name,delimiter_values=',');
     #Преобразование значений некоторых полей из типа str в типы int или float
@@ -178,46 +212,77 @@ def analize_log_pipelines_csv(log_pipelines_csv_file_name:str='log_pipelines.csv
         for pipeline_dict in log_pipelines_dicts_list:pipeline_dict['n_features_selected_randomly']=int(pipeline_dict['n_features_selected_randomly']);
     if'score_valid_mean'in log_pipelines_dicts_list[0].keys():
         for pipeline_dict in log_pipelines_dicts_list:pipeline_dict['score_valid_mean']=float(pipeline_dict['score_valid_mean']);
+    if'score_valid_std'in log_pipelines_dicts_list[0].keys():
+        for pipeline_dict in log_pipelines_dicts_list:pipeline_dict['score_valid_std']=float(pipeline_dict['score_valid_std']);
     if'score_test'in log_pipelines_dicts_list[0].keys():
         for pipeline_dict in log_pipelines_dicts_list:pipeline_dict['score_test']=float(pipeline_dict['score_test']);
     if'pipeline_file_size'in log_pipelines_dicts_list[0].keys():
         for pipeline_dict in log_pipelines_dicts_list:pipeline_dict['pipeline_file_size']=int(pipeline_dict['pipeline_file_size']);
-    print(f'log_pipelines_dicts_list: {log_pipelines_dicts_list}');
-    print(f'len(log_pipelines_dicts_list): {len(log_pipelines_dicts_list)}');
-    numeric_keys:list[str]=['n_features_all','n_features_selected_randomly','score_valid_mean','score_test','pipeline_file_size'];
+    if'seconds_processing'in log_pipelines_dicts_list[0].keys():
+        for pipeline_dict in log_pipelines_dicts_list:pipeline_dict['seconds_processing']=float(pipeline_dict['seconds_processing']);
+    print(f'АНАЛИЗ ВСЕХ СОХРАНЁННЫХ В CSV ЛОГ ПАЙПЛАЙНОВ:');
+    #print(f'log_pipelines_dicts_list: {log_pipelines_dicts_list}');#Это уже не нужно, так как выводило весь список словарей в одну очень длинную строку
+    #list_of_dicts_to_txt_table(...)->list[str]
+    txt_table_all_pipelines:list[str]=list_of_dicts_to_txt_table(list_of_dicts=log_pipelines_dicts_list,n_rows_per_header=30,delimiter='|');
+    print(f'Все пайплайны ({len(log_pipelines_dicts_list)}):');
+    for i in range(len(txt_table_all_pipelines)):print(txt_table_all_pipelines[i]);
+    print(f'Статистики по численным характеристикам пайплайнов:');
+    numeric_keys:list[str]=['n_features_all','n_features_selected_randomly','score_valid_mean','score_valid_std','score_test','pipeline_file_size','seconds_processing'];
     numeric_keys_stats:list[dict[str:float]]=[];
     for i in range(len(numeric_keys)):
         numeric_keys_stats.append({});
         name:str=numeric_keys[i];
-        numeric_keys_stats[i]['name']=numeric_keys[i];
-        numeric_keys_stats[i]['number']=sum([1 for j in range(len(log_pipelines_dicts_list))]);
-        numeric_keys_stats[i]['sum']=sum([log_pipelines_dicts_list[j][name]for j in range(len(log_pipelines_dicts_list))]);
-        numeric_keys_stats[i]['mean']=numeric_keys_stats[i]['sum']/numeric_keys_stats[i]['number'];
-        numeric_keys_stats[i]['min']=min([log_pipelines_dicts_list[j][name]for j in range(len(log_pipelines_dicts_list))]);
-        numeric_keys_stats[i]['max']=max([log_pipelines_dicts_list[j][name]for j in range(len(log_pipelines_dicts_list))]);
-        numeric_keys_stats[i]['std']=(sum([(log_pipelines_dicts_list[j][name]-numeric_keys_stats[i]['mean'])**2 for j in range(len(log_pipelines_dicts_list))])/numeric_keys_stats[i]['number'])**0.5;
-        print(f'i: {i}, numeric_keys_stats[i]: {numeric_keys_stats[i]}');
-    for name in ['n_features_selected_randomly','score_valid_mean','score_test']:
+        values:list[int|float]=[log_pipelines_dicts_list[j][name]for j in range(len(log_pipelines_dicts_list))];
+        values_sorted:list[int|float]=sorted(values,reverse=False);#Список значений, отсортированных по возрастанию (для вычисления медианы)
+        number_of_values:int=len(values);
+        min_of_values:int|float=min(values);
+        max_of_values:int|float=max(values);
+        sum_of_values:int|float=sum(values);
+        mean_of_values:float=sum_of_values/number_of_values;
+        std_of_values:float=(sum([(values[j]-mean_of_values)**2 for j in range(number_of_values)])/number_of_values)**0.5;
+        if number_of_values%2==1:#Если число элементов нечётное, то медиана - это центральный в отсортированном по возрастанию списке элемент
+            median_of_values:int|float=values_sorted[number_of_values//2];#7 [0,1,2,3,4,5,6]
+        else:#Если число элементов чётное, то медиана - это среднее арифметическое двух ближайших центру в отсортированном по возрастанию списке элементов
+            median_of_values:float=(values_sorted[number_of_values//2-1]+values_sorted[number_of_values//2])/2.0;#8 [0,1,2,3,4,5,6,7]
+        numeric_keys_stats[i]['name']=name;
+        numeric_keys_stats[i]['number']=number_of_values;
+        numeric_keys_stats[i]['min']=min_of_values;
+        numeric_keys_stats[i]['max']=max_of_values;
+        numeric_keys_stats[i]['sum']=sum_of_values;
+        numeric_keys_stats[i]['mean']=mean_of_values;
+        numeric_keys_stats[i]['median']=median_of_values;
+        numeric_keys_stats[i]['std']=std_of_values;
+        #print(f'i: {i}, numeric_keys_stats[i]: {numeric_keys_stats[i]}');
+    txt_table_numeric_keys_stats:list[str]=list_of_dicts_to_txt_table(list_of_dicts=numeric_keys_stats,n_rows_per_header=30,delimiter='|');
+    for i in range(len(txt_table_numeric_keys_stats)):print(txt_table_numeric_keys_stats[i]);
+    print(f'Пайплайны с наибольшими и наименьшими значениями численных характеристик:');
+    for name in ['n_features_selected_randomly','score_valid_mean','score_test','pipeline_file_size','seconds_processing']:
         min_sub_list:list[dict]=sorted(log_pipelines_dicts_list,key=lambda d:d[name],reverse=False)[:10];
-        print(f'Пайплайны с наименьшими значениями {name}:');
-        for i in range(len(min_sub_list)):print(f'{i}) {min_sub_list[i]}');
+        print(f'Пайплайны с наименьшими значениями {name} ({len(min_sub_list)} штук):');
+        txt_table_min_sub_list:list[str]=list_of_dicts_to_txt_table(list_of_dicts=min_sub_list,n_rows_per_header=30,delimiter='|');
+        for i in range(len(txt_table_min_sub_list)):print(txt_table_min_sub_list[i]);
         max_sub_list:list[dict]=sorted(log_pipelines_dicts_list,key=lambda d:d[name],reverse=True)[:10];
-        print(f'Пайплайны с наибольшими значениями {name}:');
-        for i in range(len(max_sub_list)):print(f'{i}) {max_sub_list[i]}');
-    s_lst:list[dict]=[d for d in log_pipelines_dicts_list];#s_lst - список только тех пайплайнов, у которых числовые значения удовлетворяют ограничениям
+        print(f'Пайплайны с наибольшими значениями {name} ({len(max_sub_list)} штук):');
+        txt_table_max_sub_list:list[str]=list_of_dicts_to_txt_table(list_of_dicts=max_sub_list,n_rows_per_header=30,delimiter='|');
+        for i in range(len(txt_table_max_sub_list)):print(txt_table_max_sub_list[i]);
+
+    print(f'АНАЛИЗ ТОЛЬКО ТЕХ СОХРАНЁННЫХ В CSV ЛОГ ПАЙПЛАЙНОВ, ДЛЯ КОТОРЫХ ВЫПОЛНЯЮТСЯ ОГРАНИЧЕНИЯ:');
+    s_lst:list[dict]=[d for d in log_pipelines_dicts_list];#s_lst (selected_lst) - список только тех пайплайнов, у которых числовые значения удовлетворяют ограничениям
     if score_valid_mean_threshold_min is not None:s_lst:list[dict]=[d for d in s_lst if d['score_valid_mean']>=score_valid_mean_threshold_min];
     if score_valid_mean_threshold_max is not None:s_lst:list[dict]=[d for d in s_lst if d['score_valid_mean']<=score_valid_mean_threshold_max];
     if score_test_threshold_min is not None:s_lst:list[dict]=[d for d in s_lst if d['score_test']>=score_test_threshold_min];
     if score_test_threshold_max is not None:s_lst:list[dict]=[d for d in s_lst if d['score_test']<=score_test_threshold_max];
     if n_features_selected_randomly_threshold_min is not None:s_lst:list[dict]=[d for d in s_lst if d['n_features_selected_randomly']>=n_features_selected_randomly_threshold_min];
     if n_features_selected_randomly_threshold_max is not None:s_lst:list[dict]=[d for d in s_lst if d['n_features_selected_randomly']<=n_features_selected_randomly_threshold_max];
-    if pipeline_file_size_theshold_min is not None:s_lst:list[dict]=[d for d in s_lst if d['pipeline_file_size']>=pipeline_file_size_theshold_min];
-    if pipeline_file_size_theshold_max is not None:s_lst:list[dict]=[d for d in s_lst if d['pipeline_file_size']<=pipeline_file_size_theshold_max];
-    
-    print(f'Список отобранных пайплайнов:');
-    for d in s_lst:print(d);
+    if pipeline_file_size_threshold_min is not None:s_lst:list[dict]=[d for d in s_lst if d['pipeline_file_size']>=pipeline_file_size_threshold_min];
+    if pipeline_file_size_threshold_max is not None:s_lst:list[dict]=[d for d in s_lst if d['pipeline_file_size']<=pipeline_file_size_threshold_max];
+    thresholds_dict:dict[str,int|float]={'score_valid_mean_threshold_min':score_valid_mean_threshold_min,'score_valid_mean_threshold_max':score_valid_mean_threshold_max,'score_test_threshold_min':score_test_threshold_min,'score_test_threshold_max':score_test_threshold_max,'n_features_selected_randomly_threshold_min':n_features_selected_randomly_threshold_min,'n_features_selected_randomly_threshold_max':n_features_selected_randomly_threshold_max,'pipeline_file_size_threshold_min':pipeline_file_size_threshold_min,'pipeline_file_size_threshold_max':pipeline_file_size_threshold_max};
+    #for d in s_lst:print(d);
+    txt_table_selected_pipelines:list[str]=list_of_dicts_to_txt_table(list_of_dicts=s_lst,n_rows_per_header=30,delimiter='|');
+    print(f'Отобранные с ограничениями пайплайны ({len(s_lst)} из {len(log_pipelines_dicts_list)}):');
+    for i in range(len(txt_table_selected_pipelines)):print(txt_table_selected_pipelines[i]);
     print(f'В списке отобранных пайплайнов {len(s_lst)} пайплайнов из {len(log_pipelines_dicts_list)} ({(100*len(s_lst)/len(log_pipelines_dicts_list)):.4f}%)');
-    print(f'Пайплайны отобраны с ограничениями: {locals()}');
+    print(f'Пайплайны отобраны с ограничениями (пороговыми значениями thresholds_dict): {thresholds_dict}');
     ids_of_selected_pipelines:list[str]=sorted([d['pipeline_id']for d in s_lst]);
     print(f'id выбранных {len(ids_of_selected_pipelines)} пайплайнов: [{" ".join(ids_of_selected_pipelines)}]');
 
@@ -280,12 +345,13 @@ def analize_log_pipelines_txt(log_pipelines_txt_file_name:str='log_pipelines.txt
     #14 наиболее часто использованных признаков (в виде словаря номер:количество): [{'index': 218, 'times': 114}, {'index': 307, 'times': 113}, {'index': 56, 'times': 111}, {'index': 266, 'times': 111}, {'index': 63, 'times': 110}, {'index': 67, 'times': 110}, {'index': 77, 'times': 109}, {'index': 336, 'times': 108}, {'index': 84, 'times': 107}, {'index': 105, 'times': 107}, {'index': 376, 'times': 106}, {'index': 59, 'times': 105}, {'index': 73, 'times': 105}, {'index': 257, 'times': 105}]
     #14 наиболее часто использованных признаков (в виде списка): [218, 307, 56, 266, 63, 67, 77, 336, 84, 105, 376, 59, 73, 257]
 
-def analize_one_pkl_file(pkl_file_name:str)->None:
-    """Функция выводит информацию о содержимом одного pkl файла"""
-    with open(file=pkl_file_name,mode='rb')as pkl_file:#binary mode doesn't take an encoding argument
+def analize_one_pipeline_pkl_file(pipeline_filename:str)->None:
+    """Функция выводит информацию о содержимом одного pkl файла пайплайна"""
+    pipeline_file_full_path:Path=pipeline_pkl_files_folder_path/pipeline_filename;#Полный путь к pkl файлу
+    with open(file=pipeline_file_full_path,mode='rb')as pkl_file:#binary mode doesn't take an encoding argument
         print(f'======== Информация об одном pkl файле ========:');
-        pkl_file_size:int=os.path.getsize(filename=pkl_file_name);
-        print(f'pkl_file_name: {pkl_file_name}, pkl_file_size: {pkl_file_size}');        
+        pipeline_file_size:int=os.path.getsize(filename=pipeline_file_full_path);
+        print(f'pipeline_filename: {pipeline_filename}, pipeline_file_full_path: {pipeline_file_full_path}, pkl_file_size: {pipeline_file_size}');        
         pkl_obj=pickle.load(file=pkl_file);
         print(f'pkl_obj: {pkl_obj}');
         print(f'type(pkl_obj): {type(pkl_obj)}');
@@ -1250,8 +1316,10 @@ def run_one_pipeline_experiment_v1(num_features_select_from_all_min:int=5,num_fe
         #opened_data в один из фолдов кросс-валидации или test_final
         for fold in range(num_folds):sample_partition_df[f'fold{fold}']=(sample_partition_df['part']==f'cv_fold{fold}').astype(int);
         sample_partition_df['test_final']=(sample_partition_df['part']=='test_final').astype(int);
-        sample_partition_df.to_parquet(path=f'sample_partition_for_pipeline_{pipeline_id}.parquet',index=False);#Для этого pyarrow или fastparquet
-        print(f"Таблица распределения образцов сохранена в файл [sample_partition_for_pipeline_{pipeline_id}.parquet]");
+        sample_partition_filename:str=f'sample_partition_for_pipeline_{pipeline_id}.parquet';
+        sample_partition_full_path:Path=sample_partition_files_folder_path/sample_partition_filename;#Полный путь к файлу с sample_partition
+        sample_partition_df.to_parquet(path=sample_partition_full_path,index=False);#Для этого pyarrow или fastparquet
+        print(f"Таблица распределения образцов сохранена в файл, sample_partition_filename: {sample_partition_filename}, sample_partition_full_path: {sample_partition_full_path}");
 
     # 5. Расчет среднего значения метрики по CV (mean) и её среднеквадратического отклонения (std) [mean чем больше тем лучше или чем
     #меньше тем лучше - в зависимости от метрики, std всегда чем меньше тем лучше, так как чем меньше std, тем устойчивее пайплайн]
@@ -1519,10 +1587,10 @@ def run_one_pipeline_experiment_v1(num_features_select_from_all_min:int=5,num_fe
 
     # 8. Генерация ID пайплайна и сохранение Production-пайплайна (update: id сгенерируем раньше для сохранения sample_partition в parquet)
     pipeline_filename:str=f"pipeline_{pipeline_id}.pkl";
-
+    pipeline_file_full_path:Path=pipeline_pkl_files_folder_path/pipeline_filename;#Полный путь к pkl файлу
     # Сохраняем production-пайплайн (именно production imputer, var_thresholder, scaler, feature_selector, model)
-    with open(file=pipeline_filename,mode='wb')as f:pickle.dump(obj={'n_features_selected_randomly':n_features_selected_randomly,'randomly_selected_indexes':randomly_selected_indexes,'imputer':imputer_production,'var_thresholder':var_thresholder_production,'scaler':scaler_production,'feature_selector':feature_selector_production,'fs_score_func_type':fs_score_func_type,'fs_estimator_type':fs_estimator_type,'model':model_production},file=f);
-    pipeline_file_size:int=os.path.getsize(filename=pipeline_filename);
+    with open(file=pipeline_file_full_path,mode='wb')as f:pickle.dump(obj={'n_features_selected_randomly':n_features_selected_randomly,'randomly_selected_indexes':randomly_selected_indexes,'imputer':imputer_production,'var_thresholder':var_thresholder_production,'scaler':scaler_production,'feature_selector':feature_selector_production,'fs_score_func_type':fs_score_func_type,'fs_estimator_type':fs_estimator_type,'model':model_production},file=f);
+    pipeline_file_size:int=os.path.getsize(filename=pipeline_file_full_path);
     scores_valid_str:str='['+', '.join([f"{s:.6f}" for s in scores_valid])+']';
 
     seconds_pipe_finish:float=time.time();#Для лога (чтобы вычислить время обработки этого пайплайна)
@@ -1618,8 +1686,9 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
     pipeline_inference_times:dict[str,dict[str,float]]={};#Для сохранения времён инференса каждого из пайплайнов по отдельности
     #Суммирование предсказаний пайплайнов:
     for pipeline_id in pipeline_ids:#Перебираем пайплайны
-        pkl_file_name:str=f'pipeline_{pipeline_id}.pkl';
-        with open(file=pkl_file_name,mode='rb')as f:pipeline_dict:dict=pickle.load(file=f);
+        pipeline_filename:str=f'pipeline_{pipeline_id}.pkl';
+        pipeline_file_full_path:Path=pipeline_pkl_files_folder_path/pipeline_filename;#Полный путь к pkl файлу
+        with open(file=pipeline_file_full_path,mode='rb')as f:pipeline_dict:dict=pickle.load(file=f);
         seconds_pipe_infer_start:float=time.time();
         print(f'pipeline_id: {pipeline_id}, pipeline_dict: {pipeline_dict}');
         n_features_selected_randomly:int=pipeline_dict['n_features_selected_randomly'];
@@ -1703,7 +1772,7 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
                     #targets_list_logits НЕ МОЖЕТ быть None, так как эта переменная всегда инициализируется. Добавим вывод для отладки:
                     #Проблема оказалась в пайпайне 3GHRO2K704L7S4HC, logit_float(x=target_predicted_proba): None
                     #target_predicted_proba: 0.49999094009399414, type(target_predicted_proba): <class 'numpy.float32'>
-                    if (targets_list_logits[sample_num] is None)or(logit_float(x=target_predicted_proba,prob_eps=prob_eps) is None):
+                    if (targets_list_logits[sample_num] is None)or(logit_float(x=target_predicted_proba,prob_eps=prob_eps) is None):#Чисто отладочные выводы
                         print(f'Одно из значений targets_list_logits[sample_num] или logit_float(x=target_predicted_proba) является None');
                         print(f'pipeline_id: {pipeline_id}, problem_type: {problem_type}, sample_num: {sample_num}');
                         print(f'type(targets_list_logits[sample_num]): {type(targets_list_logits[sample_num])}');
@@ -1729,6 +1798,13 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
         seconds_pipe_infer_last_for_n_samples_closed:float=seconds_pipe_infer_finish-seconds_pipe_infer_start;
         seconds_pipe_infer_last_per_sample:float=seconds_pipe_infer_last_for_n_samples_closed/n_samples_closed;
         pipeline_inference_times[pipeline_id]={'start':seconds_pipe_infer_start,'finish':seconds_pipe_infer_finish,'for_all':seconds_pipe_infer_last_for_n_samples_closed,'per_sample':seconds_pipe_infer_last_per_sample};
+    #Вычисление времени инференса для всего набора пайплайнов:
+    pipeline_inference_times['for_pipeline_set']={};
+    pipeline_inference_times['for_pipeline_set']['start']=min([pipeline_inference_times[pid]['start']for pid in pipeline_ids]);
+    pipeline_inference_times['for_pipeline_set']['finish']=max([pipeline_inference_times[pid]['finish']for pid in pipeline_ids]);
+    pipeline_inference_times['for_pipeline_set']['for_all']=sum([pipeline_inference_times[pid]['for_all']for pid in pipeline_ids]);
+    pipeline_inference_times['for_pipeline_set']['per_sample']=sum([pipeline_inference_times[pid]['per_sample']for pid in pipeline_ids]);
+
     #Приведение списка targets_list из list[numpy.float64] в list[float]
     if problem_type=='regression':
         for sample_num in range(n_samples_closed):targets_list[sample_num]=float(targets_list[sample_num]);
@@ -1777,27 +1853,37 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
             buf_s_labels=buf_s_labels+closed_ids[sample_num]+'\t'+' '.join([str(a)for a in targets_list_labels[sample_num]])+'\n';
     if problem_type=='regression':
         tsv_filename:str=f'result_{results_file_id}.tsv';
-        with open(file=tsv_filename,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s);
+        tsv_full_path:Path=results_files_folder_path/tsv_filename;#Полный путь к tsv файлу
+        with open(file=tsv_full_path,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s);
         npy_filename:str=f'result_{results_file_id}_closed_target.npy';
-        np.save(file=npy_filename,arr=closed_target_predicted);
+        npy_full_path:Path=results_files_folder_path/npy_filename;#Полный путь к npy файлу
+        np.save(file=npy_full_path,arr=closed_target_predicted);
     elif problem_type=='classification_binary':
         tsv_filename_proba:str=f'result_{results_file_id}_proba.tsv';
         tsv_filename_labels:str=f'result_{results_file_id}_labels.tsv';
-        with open(file=tsv_filename_proba,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_proba);
-        with open(file=tsv_filename_labels,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_labels);
+        tsv_full_path_proba:Path=results_files_folder_path/tsv_filename_proba;#Полный путь к tsv файлу proba
+        tsv_full_path_labels:Path=results_files_folder_path/tsv_filename_labels;#Полный путь к tsv файлу labels
+        with open(file=tsv_full_path_proba,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_proba);
+        with open(file=tsv_full_path_labels,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_labels);
         npy_filename_proba:str=f'result_{results_file_id}_closed_target_proba.npy';
         npy_filename_labels:str=f'result_{results_file_id}_closed_target_labels.npy';
-        np.save(file=npy_filename_proba,arr=closed_target_predicted_proba);
-        np.save(file=npy_filename_labels,arr=closed_target_predicted_labels);
+        npy_full_path_proba:Path=results_files_folder_path/npy_filename_proba;#Полный путь к npy файлу proba
+        npy_full_path_labels:Path=results_files_folder_path/npy_filename_labels;#Полный путь к npy файлу labels
+        np.save(file=npy_full_path_proba,arr=closed_target_predicted_proba);
+        np.save(file=npy_full_path_labels,arr=closed_target_predicted_labels);
     elif problem_type=='classification_multiclass':
         tsv_filename_proba:str=f'result_{results_file_id}_proba.tsv';
         tsv_filename_labels:str=f'result_{results_file_id}_labels.tsv';
-        with open(file=tsv_filename_proba,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_proba);
-        with open(file=tsv_filename_labels,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_labels);
+        tsv_full_path_proba:Path=results_files_folder_path/tsv_filename_proba;#Полный путь к tsv файлу proba
+        tsv_full_path_labels:Path=results_files_folder_path/tsv_filename_labels;#Полный путь к tsv файлу labels
+        with open(file=tsv_full_path_proba,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_proba);
+        with open(file=tsv_full_path_labels,mode='wt',encoding='UTF-8')as tsv_file:tsv_file.write(buf_s_labels);
         npy_filename_proba:str=f'result_{results_file_id}_closed_target_proba.npy';
         npy_filename_labels:str=f'result_{results_file_id}_closed_target_labels.npy';
-        np.save(file=npy_filename_proba,arr=closed_target_predicted_proba);
-        np.save(file=npy_filename_labels,arr=closed_target_predicted_labels);
+        npy_full_path_proba:Path=results_files_folder_path/npy_filename_proba;#Полный путь к npy файлу proba
+        npy_full_path_labels:Path=results_files_folder_path/npy_filename_labels;#Полный путь к npy файлу labels
+        np.save(file=npy_full_path_proba,arr=closed_target_predicted_proba);
+        np.save(file=npy_full_path_labels,arr=closed_target_predicted_labels);
     #targets_ndarray:np.ndarray=np.ndarray(shape=(n_samples_closed,),dtype=np.float32);
     #for i in range(n_samples_closed):targets_ndarray[i]=targets_list[i];
     #targets_ndarray=targets_ndarray.round(decimals=2);
@@ -1808,7 +1894,8 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
                 print(f'targets_list: {targets_list}, type(targets_list): {type(targets_list)}, targets_list[0]: {targets_list[0]}, type(targets_list[0]): {type(targets_list[0])}');
             json_dict:dict={'predictions':predictions_str};
             json_filename:str=f'result_{results_file_id}_{dig}_dig.json';
-            with open(file=json_filename,mode='wt',encoding='UTF-8')as json_file:json.dump(obj=json_dict,fp=json_file);
+            json_full_path:Path=results_files_folder_path/json_filename;#Полный путь к json файлу
+            with open(file=json_full_path,mode='wt',encoding='UTF-8')as json_file:json.dump(obj=json_dict,fp=json_file);
     elif problem_type=='classification_binary':
         for dig in range(digits_round_min,digits_round_max+1):#Чтобы можно было создать несколько json файлов с разным количеством цифр для вероятностей
             predictions_str_proba:str=float_list_to_comma_separated_str(float_list=targets_list_proba,digits=dig);
@@ -1816,14 +1903,16 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
                 print(f'targets_list_proba: {targets_list_proba}, type(targets_list_proba): {type(targets_list_proba)}, targets_list_proba[0]: {targets_list_proba[0]}, type(targets_list_proba[0]): {type(targets_list_proba[0])}');
             json_dict_proba:dict={'predictions_proba':predictions_str_proba};
             json_filename_proba:str=f'result_{results_file_id}_{dig}_dig_proba.json';
-            with open(file=json_filename_proba,mode='wt',encoding='UTF-8')as json_file:json.dump(obj=json_dict_proba,fp=json_file);
+            json_full_path_proba:Path=results_files_folder_path/json_filename_proba;#Полный путь к json файлу proba
+            with open(file=json_full_path_proba,mode='wt',encoding='UTF-8')as json_file:json.dump(obj=json_dict_proba,fp=json_file);
         #Для меток не будем делить на количества цифр
         predictions_str_labels:str=int_list_to_comma_separated_str(int_list=targets_list_labels);
         if conf_dict['creating_prediction_files_params']['print_targets_list']==True:
             print(f'targets_list_labels: {targets_list_labels}, type(targets_list_labels): {type(targets_list_labels)}, targets_list_labels[0]: {targets_list_labels[0]}, type(targets_list_labels[0]): {type(targets_list_labels[0])}');
         json_dict_labels:dict={'predictions_labels':predictions_str_labels};
         json_filename_labels:str=f'result_{results_file_id}_labels.json';
-        with open(file=json_filename_labels,mode='wt',encoding='UTF-8')as json_file:json.dump(obj=json_dict_labels,fp=json_file);
+        json_full_path_labels:Path=results_files_folder_path/json_filename_labels;#Полный путь к json файлу labels
+        with open(file=json_full_path_labels,mode='wt',encoding='UTF-8')as json_file:json.dump(obj=json_dict_labels,fp=json_file);
     elif problem_type=='classification_multiclass':
         pass;#Возможно позже стоит добавить сюда код для записи вероятностей и меток многоклассовой классификации в json файлы
     n_pipeline_ids:int=len(pipeline_ids);
@@ -1843,7 +1932,7 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
     score_for_closed_data_log_str:str=f'Выбрано не вычислять значения target для закрытых данных. Возможно значений target для закрытых данных нет. Тогда для оценивания качества разработанного ансамбля пайплайнов нужно загрузить полученный файл с предсказаниями в проверяющую систему. Если значения target для закрытых данных есть, нужно изменить параметр calculate_score_for_closed_data в файле конфигурации и указать правильное название файла с истинными таргетами для закрытых данных.';
     if calculate_score_for_closed_data==True:#Если значение score для closed_data нужно вычислить самому, а не отправлять свои предсказания в проверяющую систему
         closed_target_npy_filename:str=conf_dict['data_files_names']['closed_target_npy'];
-        if os.path.exists(path=closed_target_npy_filename):
+        if os.path.exists(path=closed_target_npy_filename):#Тут именно npy файл со значениями истинных таргетов (он НЕ в папке results_files)
             closed_target_actual:np.ndarray=np.load(file=closed_target_npy_filename);
             if problem_type=='regression':
                 if score_type=='d2_absolute_error_score':score_closed=d2_absolute_error_score(y_true=closed_target_actual,y_pred=closed_target_predicted);
@@ -1909,6 +1998,7 @@ def create_predictions_files(problem_type:str,n_classes:int,pipeline_ids:list[st
             raise(ValueError(f'Файл [{closed_target_npy_filename}] со значениями таргетов для closed_data не существует. Или он должен существовать, или необходимо установить calculate_score_for_closed_data=False.'));
         inference_times_log_str:str=f"""Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):""";
         for pipeline_id in pipeline_ids:inference_times_log_str=inference_times_log_str+f'\npipeline_id: {pipeline_id}, pipeline_inference_times: {pipeline_inference_times[pipeline_id]}';
+        inference_times_log_str=inference_times_log_str+f'\npipeline_id: for_pipeline_set, pipeline_inference_times: {pipeline_inference_times["for_pipeline_set"]}';
         results_log_record:str=f"""
 results_file_id: {results_file_id}
 dt_prediction_files_start_str: {dt_prediction_files_start_str}
@@ -1933,8 +2023,9 @@ def create_coefs_and_bias_files(pipeline_ids:list[str],digits_round_min:int=2,di
     #Считываем первый пайплайн для инициализации некоторых значений:
     print(f'ИНИЦИАЛИЗАЦИЯ НЕКОТОРЫХ ЗНАЧЕНИЙ ПЕРЕД СУММИРОВАНИЕМ coefs и bias:');
     pipeline_id:str=pipeline_ids[0];
-    pkl_file_name:str=f'pipeline_{pipeline_id}.pkl';
-    with open(file=pkl_file_name,mode='rb')as f:pipeline_dict:dict=pickle.load(file=f);
+    pipeline_filename:str=f'pipeline_{pipeline_id}.pkl';
+    pipeline_file_full_path:Path=pipeline_pkl_files_folder_path/pipeline_filename;#Полный путь к pkl файлу
+    with open(file=pipeline_file_full_path,mode='rb')as f:pipeline_dict:dict=pickle.load(file=f);
     print(f'pipeline_id: {pipeline_id}, pipeline_dict: {pipeline_dict}');
     n_features_selected_randomly:int=pipeline_dict['n_features_selected_randomly'];#n_features_selected_randomly одинаковое у всех пайплайнов
     randomly_selected_indexes:list[int]=pipeline_dict['randomly_selected_indexes'];#randomly_selected_indexes одинаковое у всех пайплайнов
@@ -1952,9 +2043,10 @@ def create_coefs_and_bias_files(pipeline_ids:list[str],digits_round_min:int=2,di
     num_pipelines_added:int=0;
     num_pipelines_have_coef_and_intercept_attributes:int=0;
     for pipeline_id in pipeline_ids:
-        pkl_file_name:str=f'pipeline_{pipeline_id}.pkl';
-        print(f'Добавление пайплайна номер {num_pipelines_added+1} из {len(pipeline_ids)}, pipeline_id: {pipeline_id}, file_name: {pkl_file_name}');
-        with open(file=pkl_file_name,mode='rb')as f:pipeline_dict:dict=pickle.load(file=f);
+        pipeline_filename:str=f'pipeline_{pipeline_id}.pkl';
+        pipeline_file_full_path:Path=pipeline_pkl_files_folder_path/pipeline_filename;#Полный путь к pkl файлу
+        print(f'Добавление пайплайна номер {num_pipelines_added+1} из {len(pipeline_ids)}, pipeline_id: {pipeline_id}, pipeline_filename: {pipeline_filename}, pipeline_file_full_path: {pipeline_file_full_path}');
+        with open(file=pipeline_file_full_path,mode='rb')as f:pipeline_dict:dict=pickle.load(file=f);
         #!!!Для пайплайнов scaler в общем случае не обязан быть одинаковым, поэтому skaler для каждого пайплайна считываем
         scaler_current=pipeline_dict['scaler'];#заново (из обрабатываемого в данный момент пайплайна)
         
@@ -2052,6 +2144,19 @@ if __name__=='__main__':
     opened_data_all_features,opened_target,opened_ids,closed_data_all_features,closed_target,closed_ids=load_data_from_npy(save_opened_and_closed_features_csvs=save_opened_and_closed_features_csvs,save_opened_parquet=save_opened_parquet);
     create_log_files();
 
+    pipeline_pkl_files_folder_name:str=conf_dict['pipeline_params']['pipeline_pkl_files_folder_name'];
+    pipeline_pkl_files_folder_path:Path=Path(pipeline_pkl_files_folder_name);
+    pipeline_pkl_files_folder_path.mkdir(parents=True,exist_ok=True);#Создать папку pipeline_pkl_files если она не существует
+
+    sample_partition_files_folder_name:str=conf_dict['pipeline_params']['sample_partition_files_folder_name'];
+    sample_partition_files_folder_path:Path=Path(sample_partition_files_folder_name);
+    sample_partition_files_folder_path.mkdir(parents=True,exist_ok=True);#Создать папку sample_partition_files если она не существует
+
+    results_files_folder_name:str=conf_dict['creating_prediction_files_params']['results_files_folder_name'];
+    results_files_folder_path:Path=Path(results_files_folder_name);
+    results_files_folder_path.mkdir(parents=True,exist_ok=True);#Создать папку results_files если она не существует
+
+
     #Основной цикл программы:
     command_num:int=0;
     while command_num!=-1:
@@ -2121,10 +2226,10 @@ if __name__=='__main__':
             score_test_threshold_max:float=conf_dict['csv_log_analize_params']['score_test_threshold_max'];
             n_features_selected_randomly_threshold_min:int=conf_dict['csv_log_analize_params']['n_features_selected_randomly_threshold_min'];
             n_features_selected_randomly_threshold_max:int=conf_dict['csv_log_analize_params']['n_features_selected_randomly_threshold_max'];
-            pipeline_file_size_theshold_min:int=conf_dict['csv_log_analize_params']['pipeline_file_size_theshold_min'];
-            pipeline_file_size_theshold_max:int=conf_dict['csv_log_analize_params']['pipeline_file_size_theshold_max'];
+            pipeline_file_size_threshold_min:int=conf_dict['csv_log_analize_params']['pipeline_file_size_threshold_min'];
+            pipeline_file_size_threshold_max:int=conf_dict['csv_log_analize_params']['pipeline_file_size_threshold_max'];
             log_pipelines_csv_file_name:str=conf_dict['csv_log_analize_params']['log_pipelines_csv_file_name'];
-            analize_log_pipelines_csv(log_pipelines_csv_file_name=log_pipelines_csv_file_name,score_valid_mean_threshold_min=score_valid_mean_threshold_min,score_valid_mean_threshold_max=score_valid_mean_threshold_max,score_test_threshold_min=score_test_threshold_min,score_test_threshold_max=score_test_threshold_max,n_features_selected_randomly_threshold_min=n_features_selected_randomly_threshold_min,n_features_selected_randomly_threshold_max=n_features_selected_randomly_threshold_max,pipeline_file_size_theshold_min=pipeline_file_size_theshold_min,pipeline_file_size_theshold_max=pipeline_file_size_theshold_max);
+            analize_log_pipelines_csv(log_pipelines_csv_file_name=log_pipelines_csv_file_name,score_valid_mean_threshold_min=score_valid_mean_threshold_min,score_valid_mean_threshold_max=score_valid_mean_threshold_max,score_test_threshold_min=score_test_threshold_min,score_test_threshold_max=score_test_threshold_max,n_features_selected_randomly_threshold_min=n_features_selected_randomly_threshold_min,n_features_selected_randomly_threshold_max=n_features_selected_randomly_threshold_max,pipeline_file_size_threshold_min=pipeline_file_size_threshold_min,pipeline_file_size_threshold_max=pipeline_file_size_threshold_max);
             pass;
         elif command_num==4:#анализ txt лога с результатами пайплайнов
             log_pipelines_txt_file_name:str=conf_dict['txt_log_analize_params']['log_pipelines_txt_file_name'];
@@ -2132,9 +2237,9 @@ if __name__=='__main__':
 
             pass;
         elif command_num==5:
-            pkl_file_name:str=input('Введите название pkl файла (например, pipeline_RM3W9PGWI65QRNXI.pkl) или просто id пайплайна (например, RM3W9PGWI65QRNXI): ');
-            if 'pipeline_'not in pkl_file_name:pkl_file_name=f'pipeline_{pkl_file_name}.pkl';
-            analize_one_pkl_file(pkl_file_name=pkl_file_name);
+            pipeline_filename:str=input('Введите название pkl файла (например, pipeline_RM3W9PGWI65QRNXI.pkl) или просто id пайплайна (например, RM3W9PGWI65QRNXI): ');
+            if 'pipeline_'not in pipeline_filename:pipeline_filename=f'pipeline_{pipeline_filename}.pkl';
+            analize_one_pipeline_pkl_file(pipeline_filename=pipeline_filename);
 
             pass;
         elif command_num==6:#6 => создать txt файл со значениями coef и bias для модели или усреднёнными значениями нескольких пайплайнов из списка их id

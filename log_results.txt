@@ -1,0 +1,502 @@
+
+results_file_id: CVIAVXDD1XG01ZWJ
+dt_prediction_files_start_str: 2026-05-10_08-54-46
+seconds_prediction_files_creating: 46785.589250802994
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 21
+pipeline_ids_str: 767JQN36ZDBZ029R JLZ28AZLM5YQ7VMO 7TKXUFDUM5A78BOW XTV9WUHUA3UTV556 UCU0Q444E6NE8V0Z AUJUU0O2UN6NX4XM VI83VCEF6OZCH5D6 MHBHVULB8QRTH8T0 XD001DZ761R3M5NT AYA5GDH497EESRII Q9OGI247E3VF8VOJ DX2LEHWHMOKF3PSH 4GT6IXGRO3ZIE1S0 UZGJUTYFXBD1FJFP O95SU0A0SGJMCCOQ L88KPB3UY5YMVT79 YK33DI5DGMXR32WU VYP4SFYUDNHM5CGD H7QANAKCR4X9A4ZV T208140D80E4XZ5N F7CPBHH1OPLNE2QN
+n_pipelines_with_predict_proba: 21
+pipeline_ids_with_predict_proba_str: 767JQN36ZDBZ029R JLZ28AZLM5YQ7VMO 7TKXUFDUM5A78BOW XTV9WUHUA3UTV556 UCU0Q444E6NE8V0Z AUJUU0O2UN6NX4XM VI83VCEF6OZCH5D6 MHBHVULB8QRTH8T0 XD001DZ761R3M5NT AYA5GDH497EESRII Q9OGI247E3VF8VOJ DX2LEHWHMOKF3PSH 4GT6IXGRO3ZIE1S0 UZGJUTYFXBD1FJFP O95SU0A0SGJMCCOQ L88KPB3UY5YMVT79 YK33DI5DGMXR32WU VYP4SFYUDNHM5CGD H7QANAKCR4X9A4ZV T208140D80E4XZ5N F7CPBHH1OPLNE2QN
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 767JQN36ZDBZ029R, pipeline_inference_times: {'start': 1778392486.701222, 'finish': 1778393619.9989502, 'for_all': 1133.2977283000946, 'per_sample': 0.2023745943393026}
+pipeline_id: JLZ28AZLM5YQ7VMO, pipeline_inference_times: {'start': 1778393620.7718792, 'finish': 1778397531.7495837, 'for_all': 3910.977704524994, 'per_sample': 0.6983888758080347}
+pipeline_id: 7TKXUFDUM5A78BOW, pipeline_inference_times: {'start': 1778397532.5805852, 'finish': 1778401734.030255, 'for_all': 4201.449669837952, 'per_sample': 0.75025886961392}
+pipeline_id: XTV9WUHUA3UTV556, pipeline_inference_times: {'start': 1778401737.512972, 'finish': 1778403742.9258683, 'for_all': 2005.412896156311, 'per_sample': 0.3581094457421984}
+pipeline_id: UCU0Q444E6NE8V0Z, pipeline_inference_times: {'start': 1778403747.235132, 'finish': 1778406468.0372632, 'for_all': 2720.802131175995, 'per_sample': 0.4858575234242848}
+pipeline_id: AUJUU0O2UN6NX4XM, pipeline_inference_times: {'start': 1778406472.8948078, 'finish': 1778408445.1708534, 'for_all': 1972.2760455608368, 'per_sample': 0.35219215099300655}
+pipeline_id: VI83VCEF6OZCH5D6, pipeline_inference_times: {'start': 1778408445.851509, 'finish': 1778410801.4984434, 'for_all': 2355.6469342708588, 'per_sample': 0.4206512382626533}
+pipeline_id: MHBHVULB8QRTH8T0, pipeline_inference_times: {'start': 1778410803.367559, 'finish': 1778414189.4737842, 'for_all': 3386.1062252521515, 'per_sample': 0.6046618259378842}
+pipeline_id: XD001DZ761R3M5NT, pipeline_inference_times: {'start': 1778414191.9217658, 'finish': 1778416313.9142978, 'for_all': 2121.992532014847, 'per_sample': 0.3789272378597941}
+pipeline_id: AYA5GDH497EESRII, pipeline_inference_times: {'start': 1778416314.3851337, 'finish': 1778417099.5096047, 'for_all': 785.124470949173, 'per_sample': 0.14020079838378088}
+pipeline_id: Q9OGI247E3VF8VOJ, pipeline_inference_times: {'start': 1778417100.0205946, 'finish': 1778420393.8234398, 'for_all': 3293.8028452396393, 'per_sample': 0.5881790795070785}
+pipeline_id: DX2LEHWHMOKF3PSH, pipeline_inference_times: {'start': 1778420396.3225415, 'finish': 1778421183.6435742, 'for_all': 787.3210327625275, 'per_sample': 0.14059304156473704}
+pipeline_id: 4GT6IXGRO3ZIE1S0, pipeline_inference_times: {'start': 1778421185.9214149, 'finish': 1778422384.5138717, 'for_all': 1198.592456817627, 'per_sample': 0.21403436728886197}
+pipeline_id: UZGJUTYFXBD1FJFP, pipeline_inference_times: {'start': 1778422385.2371984, 'finish': 1778425962.65939, 'for_all': 3577.422191619873, 'per_sample': 0.6388253913606916}
+pipeline_id: O95SU0A0SGJMCCOQ, pipeline_inference_times: {'start': 1778425963.1579642, 'finish': 1778427526.498897, 'for_all': 1563.3409328460693, 'per_sample': 0.27916802372251237}
+pipeline_id: L88KPB3UY5YMVT79, pipeline_inference_times: {'start': 1778427526.989909, 'finish': 1778428946.8691177, 'for_all': 1419.8792088031769, 'per_sample': 0.253549858714853}
+pipeline_id: YK33DI5DGMXR32WU, pipeline_inference_times: {'start': 1778428947.4419742, 'finish': 1778430605.8776886, 'for_all': 1658.435714483261, 'per_sample': 0.2961492347291538}
+pipeline_id: VYP4SFYUDNHM5CGD, pipeline_inference_times: {'start': 1778430606.2950795, 'finish': 1778433967.4665825, 'for_all': 3361.1715030670166, 'per_sample': 0.600209196976253}
+pipeline_id: H7QANAKCR4X9A4ZV, pipeline_inference_times: {'start': 1778433972.5711892, 'finish': 1778437854.2066638, 'for_all': 3881.6354746818542, 'per_sample': 0.6931491919074739}
+pipeline_id: T208140D80E4XZ5N, pipeline_inference_times: {'start': 1778437856.2299929, 'finish': 1778438452.0000288, 'for_all': 595.770035982132, 'per_sample': 0.10638750642538071}
+pipeline_id: F7CPBHH1OPLNE2QN, pipeline_inference_times: {'start': 1778438452.1900804, 'finish': 1778439271.0475056, 'for_all': 818.8574252128601, 'per_sample': 0.14622454021658216}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778392486.701222, 'finish': 1778439271.0475056, 'for_all': 46749.31515955925, 'per_sample': 8.348091992778437}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9840936224489797
+
+================
+
+results_file_id: 2Q8V7R25SGYC48UE
+dt_prediction_files_start_str: 2026-05-10_21-54-32
+seconds_prediction_files_creating: 48.00869917869568
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 10
+pipeline_ids_str: LTQ1N191M1N0H6FF I0BVLEACYGBVZGK3 ENO6H5XMWQTCN94B 1PJEE7DXORS28YC8 NA1PXBY6NTXEAFF0 ZU3PN41MKUS4XSU0 Q6HZTBHJRQPLJHIV 1V5EWWOJ381LI5G9 W1PVQS3VNALFM3RU YLTI5EZY11477N99
+n_pipelines_with_predict_proba: 10
+pipeline_ids_with_predict_proba_str: LTQ1N191M1N0H6FF I0BVLEACYGBVZGK3 ENO6H5XMWQTCN94B 1PJEE7DXORS28YC8 NA1PXBY6NTXEAFF0 ZU3PN41MKUS4XSU0 Q6HZTBHJRQPLJHIV 1V5EWWOJ381LI5G9 W1PVQS3VNALFM3RU YLTI5EZY11477N99
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: LTQ1N191M1N0H6FF, pipeline_inference_times: {'start': 1778439272.6361327, 'finish': 1778439276.5151567, 'for_all': 3.879024028778076, 'per_sample': 0.0006926828622817994}
+pipeline_id: I0BVLEACYGBVZGK3, pipeline_inference_times: {'start': 1778439279.0182314, 'finish': 1778439282.8034003, 'for_all': 3.7851688861846924, 'per_sample': 0.0006759230153901237}
+pipeline_id: ENO6H5XMWQTCN94B, pipeline_inference_times: {'start': 1778439283.5582623, 'finish': 1778439287.3771365, 'for_all': 3.8188741207122803, 'per_sample': 0.00068194180727005}
+pipeline_id: 1PJEE7DXORS28YC8, pipeline_inference_times: {'start': 1778439287.4609437, 'finish': 1778439290.8121142, 'for_all': 3.351170539855957, 'per_sample': 0.0005984233106885638}
+pipeline_id: NA1PXBY6NTXEAFF0, pipeline_inference_times: {'start': 1778439290.9549057, 'finish': 1778439294.4420831, 'for_all': 3.4871773719787598, 'per_sample': 0.0006227102449962071}
+pipeline_id: ZU3PN41MKUS4XSU0, pipeline_inference_times: {'start': 1778439295.1608016, 'finish': 1778439298.4252229, 'for_all': 3.264421224594116, 'per_sample': 0.0005829323615346636}
+pipeline_id: Q6HZTBHJRQPLJHIV, pipeline_inference_times: {'start': 1778439301.2436414, 'finish': 1778439305.6309657, 'for_all': 4.387324333190918, 'per_sample': 0.0007834507737840925}
+pipeline_id: 1V5EWWOJ381LI5G9, pipeline_inference_times: {'start': 1778439307.7215805, 'finish': 1778439311.5106885, 'for_all': 3.7891080379486084, 'per_sample': 0.0006766264353479657}
+pipeline_id: W1PVQS3VNALFM3RU, pipeline_inference_times: {'start': 1778439312.8284323, 'finish': 1778439316.0486004, 'for_all': 3.220168113708496, 'per_sample': 0.0005750300203050886}
+pipeline_id: YLTI5EZY11477N99, pipeline_inference_times: {'start': 1778439316.4326098, 'finish': 1778439320.196468, 'for_all': 3.7638583183288574, 'per_sample': 0.0006721175568444388}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778439272.6361327, 'finish': 1778439320.196468, 'for_all': 36.74629497528076, 'per_sample': 0.0065618383884429934}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9789276785714285
+
+================
+
+results_file_id: NPQ55HT2VXI85WVT
+dt_prediction_files_start_str: 2026-05-10_21-55-20
+seconds_prediction_files_creating: 1316.5002930164337
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 22
+pipeline_ids_str: YMZDM6YU66KC2M5H SQYTH0VPB6I5ZMMM E9QHA4SSVZCUR7UR 1DFSGR0P3HIKSZWN HODOX6BT5CIQ995R 9BD9EWDMQZULJJMV WHY0DF76MJEV8K3S HVG2FJBESCYJKIDI QV6MXJQ8LP70TAMZ NDR8VPT5WA6KQYS1 DNHYEU0N4K1TP2LN E9BTJQ4B8543P511 VQG3WDO03MAN9VKI UE2MFCTIL4DQ7AFC JH9VT5WHGQM3L852 C6WJJ04WCT9J8NMS C92YGQGXQGVSIF9Y D354JLX3VN0TONGF YMOQ4ZZ8R9HRM6WW VN5SWRH7QCYZR8RK GQ3FKP83R7I5HDZ5 NVQB8M20TU24G3P0
+n_pipelines_with_predict_proba: 22
+pipeline_ids_with_predict_proba_str: YMZDM6YU66KC2M5H SQYTH0VPB6I5ZMMM E9QHA4SSVZCUR7UR 1DFSGR0P3HIKSZWN HODOX6BT5CIQ995R 9BD9EWDMQZULJJMV WHY0DF76MJEV8K3S HVG2FJBESCYJKIDI QV6MXJQ8LP70TAMZ NDR8VPT5WA6KQYS1 DNHYEU0N4K1TP2LN E9BTJQ4B8543P511 VQG3WDO03MAN9VKI UE2MFCTIL4DQ7AFC JH9VT5WHGQM3L852 C6WJJ04WCT9J8NMS C92YGQGXQGVSIF9Y D354JLX3VN0TONGF YMOQ4ZZ8R9HRM6WW VN5SWRH7QCYZR8RK GQ3FKP83R7I5HDZ5 NVQB8M20TU24G3P0
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: YMZDM6YU66KC2M5H, pipeline_inference_times: {'start': 1778439322.4532804, 'finish': 1778439364.1366851, 'for_all': 41.68340468406677, 'per_sample': 0.007443465122154781}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778439364.387243, 'finish': 1778439437.8324738, 'for_all': 73.44523072242737, 'per_sample': 0.01311521977186203}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778439438.1853726, 'finish': 1778439514.276515, 'for_all': 76.09114241600037, 'per_sample': 0.013587704002857208}
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778439514.3958683, 'finish': 1778439582.5003827, 'for_all': 68.10451436042786, 'per_sample': 0.012161520421504974}
+pipeline_id: HODOX6BT5CIQ995R, pipeline_inference_times: {'start': 1778439585.0173545, 'finish': 1778439644.9161363, 'for_all': 59.89878177642822, 'per_sample': 0.01069621103150504}
+pipeline_id: 9BD9EWDMQZULJJMV, pipeline_inference_times: {'start': 1778439646.986505, 'finish': 1778439707.8137097, 'for_all': 60.82720470428467, 'per_sample': 0.010862000840050833}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778439708.0479043, 'finish': 1778439811.317355, 'for_all': 103.26945066452026, 'per_sample': 0.018440973332950045}
+pipeline_id: HVG2FJBESCYJKIDI, pipeline_inference_times: {'start': 1778439812.003013, 'finish': 1778439852.0458446, 'for_all': 40.04283165931702, 'per_sample': 0.007150505653449467}
+pipeline_id: QV6MXJQ8LP70TAMZ, pipeline_inference_times: {'start': 1778439854.666629, 'finish': 1778439898.3875034, 'for_all': 43.720874309539795, 'per_sample': 0.007807298983846392}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778439898.4605782, 'finish': 1778439943.0833354, 'for_all': 44.62275719642639, 'per_sample': 0.007968349499361855}
+pipeline_id: DNHYEU0N4K1TP2LN, pipeline_inference_times: {'start': 1778439945.0029325, 'finish': 1778439995.0945675, 'for_all': 50.09163498878479, 'per_sample': 0.008944934819425855}
+pipeline_id: E9BTJQ4B8543P511, pipeline_inference_times: {'start': 1778439995.2368243, 'finish': 1778440074.093166, 'for_all': 78.85634183883667, 'per_sample': 0.014081489614077977}
+pipeline_id: VQG3WDO03MAN9VKI, pipeline_inference_times: {'start': 1778440074.2316208, 'finish': 1778440109.4000502, 'for_all': 35.168429374694824, 'per_sample': 0.006280076674052647}
+pipeline_id: UE2MFCTIL4DQ7AFC, pipeline_inference_times: {'start': 1778440112.1893225, 'finish': 1778440183.633066, 'for_all': 71.44374346733093, 'per_sample': 0.012757811333451953}
+pipeline_id: JH9VT5WHGQM3L852, pipeline_inference_times: {'start': 1778440183.7066495, 'finish': 1778440241.4462364, 'for_all': 57.73958683013916, 'per_sample': 0.010310640505381993}
+pipeline_id: C6WJJ04WCT9J8NMS, pipeline_inference_times: {'start': 1778440241.5506394, 'finish': 1778440313.8614554, 'for_all': 72.3108160495758, 'per_sample': 0.012912645723138537}
+pipeline_id: C92YGQGXQGVSIF9Y, pipeline_inference_times: {'start': 1778440317.1470222, 'finish': 1778440393.5075948, 'for_all': 76.36057257652283, 'per_sample': 0.013635816531521933}
+pipeline_id: D354JLX3VN0TONGF, pipeline_inference_times: {'start': 1778440395.318142, 'finish': 1778440443.7076387, 'for_all': 48.38949680328369, 'per_sample': 0.008640981572014945}
+pipeline_id: YMOQ4ZZ8R9HRM6WW, pipeline_inference_times: {'start': 1778440443.7582822, 'finish': 1778440479.9516177, 'for_all': 36.19333553314209, 'per_sample': 0.00646309563091823}
+pipeline_id: VN5SWRH7QCYZR8RK, pipeline_inference_times: {'start': 1778440480.0599139, 'finish': 1778440567.872036, 'for_all': 87.81212210655212, 'per_sample': 0.015680736090455737}
+pipeline_id: GQ3FKP83R7I5HDZ5, pipeline_inference_times: {'start': 1778440567.9110243, 'finish': 1778440598.5774329, 'for_all': 30.66640853881836, 'per_sample': 0.0054761443819318495}
+pipeline_id: NVQB8M20TU24G3P0, pipeline_inference_times: {'start': 1778440598.6373363, 'finish': 1778440636.810579, 'for_all': 38.173242807388306, 'per_sample': 0.006816650501319341}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778439322.4532804, 'finish': 1778440636.810579, 'for_all': 1294.9119234085083, 'per_sample': 0.23123427203723362}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9897140306122449
+
+================
+
+results_file_id: K2CZUUR3XTOVVZ52
+dt_prediction_files_start_str: 2026-05-10_22-17-17
+seconds_prediction_files_creating: 37887.99813866615
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 29
+pipeline_ids_str: RUGG6D9HFG0P0P4U I52TMO66L7K8KPWG ACNXUODCXZLK34VK CWUPT68MYYIXTO94 ZXYE2W3PKC7LBXQZ JDP7V40Z8J8KTJJK AE2RFLXDGS2KZGKL 8W5CF5HD2Y5EZAKQ E0FDRZQ6SA73UAZR IZ5N8OC9NPGX084S YQB2A8W6W44VIO6D GV3CSZCS6EV2Z5DC Q7VVEUPHCC8IWVD7 SML0B6D6XY2HL4HQ T0QZ2K6BVIAIJG4X 2BNMBES4INREY2EB FSPTU5FSS4YEAJ8W GJ3NR3D7VNMQGT2H 431X6LZ66OC20FRY PVKM8DY7FP4543DA Z312PB0PR0R5I5WY TUKQMTU82QSVKFJH 841Y9YYP34IHZLZK VPI25F3KAEN1U8HB BF343RNNP46FA8AL 4YPE14ENMHNV5XAR J8PMASJIP8UWVLLY CRRCWHIP8FW27V02 W3V064KG9FMNRRKK
+n_pipelines_with_predict_proba: 29
+pipeline_ids_with_predict_proba_str: RUGG6D9HFG0P0P4U I52TMO66L7K8KPWG ACNXUODCXZLK34VK CWUPT68MYYIXTO94 ZXYE2W3PKC7LBXQZ JDP7V40Z8J8KTJJK AE2RFLXDGS2KZGKL 8W5CF5HD2Y5EZAKQ E0FDRZQ6SA73UAZR IZ5N8OC9NPGX084S YQB2A8W6W44VIO6D GV3CSZCS6EV2Z5DC Q7VVEUPHCC8IWVD7 SML0B6D6XY2HL4HQ T0QZ2K6BVIAIJG4X 2BNMBES4INREY2EB FSPTU5FSS4YEAJ8W GJ3NR3D7VNMQGT2H 431X6LZ66OC20FRY PVKM8DY7FP4543DA Z312PB0PR0R5I5WY TUKQMTU82QSVKFJH 841Y9YYP34IHZLZK VPI25F3KAEN1U8HB BF343RNNP46FA8AL 4YPE14ENMHNV5XAR J8PMASJIP8UWVLLY CRRCWHIP8FW27V02 W3V064KG9FMNRRKK
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: RUGG6D9HFG0P0P4U, pipeline_inference_times: {'start': 1778440638.644471, 'finish': 1778440973.1584773, 'for_all': 334.5140063762665, 'per_sample': 0.05973464399576187}
+pipeline_id: I52TMO66L7K8KPWG, pipeline_inference_times: {'start': 1778440975.3255906, 'finish': 1778441036.3394618, 'for_all': 61.01387119293213, 'per_sample': 0.010895334141595023}
+pipeline_id: ACNXUODCXZLK34VK, pipeline_inference_times: {'start': 1778441039.0707383, 'finish': 1778441821.4631584, 'for_all': 782.392420053482, 'per_sample': 0.13971293215240752}
+pipeline_id: CWUPT68MYYIXTO94, pipeline_inference_times: {'start': 1778441824.5238342, 'finish': 1778442934.6784909, 'for_all': 1110.1546566486359, 'per_sample': 0.1982419029729707}
+pipeline_id: ZXYE2W3PKC7LBXQZ, pipeline_inference_times: {'start': 1778442936.3338554, 'finish': 1778443226.698295, 'for_all': 290.36443972587585, 'per_sample': 0.05185079280819212}
+pipeline_id: JDP7V40Z8J8KTJJK, pipeline_inference_times: {'start': 1778443229.1723533, 'finish': 1778443867.1459978, 'for_all': 637.9736444950104, 'per_sample': 0.11392386508839471}
+pipeline_id: AE2RFLXDGS2KZGKL, pipeline_inference_times: {'start': 1778443869.4767303, 'finish': 1778444428.3214092, 'for_all': 558.8446788787842, 'per_sample': 0.09979369265692575}
+pipeline_id: 8W5CF5HD2Y5EZAKQ, pipeline_inference_times: {'start': 1778444432.7156916, 'finish': 1778456813.5937588, 'for_all': 12380.87806725502, 'per_sample': 2.2108710834383967}
+pipeline_id: E0FDRZQ6SA73UAZR, pipeline_inference_times: {'start': 1778456817.175276, 'finish': 1778457431.625747, 'for_all': 614.4504709243774, 'per_sample': 0.10972329837935312}
+pipeline_id: IZ5N8OC9NPGX084S, pipeline_inference_times: {'start': 1778457433.1370418, 'finish': 1778457771.7677598, 'for_all': 338.6307179927826, 'per_sample': 0.06046977107013975}
+pipeline_id: YQB2A8W6W44VIO6D, pipeline_inference_times: {'start': 1778457779.5086348, 'finish': 1778458149.8376484, 'for_all': 370.3290135860443, 'per_sample': 0.0661301809975079}
+pipeline_id: GV3CSZCS6EV2Z5DC, pipeline_inference_times: {'start': 1778458151.8426473, 'finish': 1778459320.9004157, 'for_all': 1169.0577683448792, 'per_sample': 0.20876031577587129}
+pipeline_id: Q7VVEUPHCC8IWVD7, pipeline_inference_times: {'start': 1778459324.6732905, 'finish': 1778460284.2782364, 'for_all': 959.604945898056, 'per_sample': 0.17135802605322428}
+pipeline_id: SML0B6D6XY2HL4HQ, pipeline_inference_times: {'start': 1778460284.7232466, 'finish': 1778460506.577857, 'for_all': 221.85461044311523, 'per_sample': 0.03961689472198486}
+pipeline_id: T0QZ2K6BVIAIJG4X, pipeline_inference_times: {'start': 1778460508.2352514, 'finish': 1778460939.6033723, 'for_all': 431.3681209087372, 'per_sample': 0.07703002159084593}
+pipeline_id: 2BNMBES4INREY2EB, pipeline_inference_times: {'start': 1778460940.944025, 'finish': 1778461471.1197205, 'for_all': 530.1756954193115, 'per_sample': 0.09467423132487705}
+pipeline_id: FSPTU5FSS4YEAJ8W, pipeline_inference_times: {'start': 1778461472.8163917, 'finish': 1778466051.9623077, 'for_all': 4579.145915985107, 'per_sample': 0.8177046278544835}
+pipeline_id: GJ3NR3D7VNMQGT2H, pipeline_inference_times: {'start': 1778466052.648292, 'finish': 1778466113.7220602, 'for_all': 61.0737681388855, 'per_sample': 0.010906030024800981}
+pipeline_id: 431X6LZ66OC20FRY, pipeline_inference_times: {'start': 1778466114.839829, 'finish': 1778466157.0579748, 'for_all': 42.21814584732056, 'per_sample': 0.0075389546155929564}
+pipeline_id: PVKM8DY7FP4543DA, pipeline_inference_times: {'start': 1778466160.9093344, 'finish': 1778466567.1676352, 'for_all': 406.25830078125, 'per_sample': 0.07254612513950894}
+pipeline_id: Z312PB0PR0R5I5WY, pipeline_inference_times: {'start': 1778466569.715838, 'finish': 1778467135.655901, 'for_all': 565.9400629997253, 'per_sample': 0.10106072553566524}
+pipeline_id: TUKQMTU82QSVKFJH, pipeline_inference_times: {'start': 1778467140.4287214, 'finish': 1778467313.222489, 'for_all': 172.79376769065857, 'per_sample': 0.030856029944760457}
+pipeline_id: 841Y9YYP34IHZLZK, pipeline_inference_times: {'start': 1778467314.2858658, 'finish': 1778470170.7413294, 'for_all': 2856.4554636478424, 'per_sample': 0.5100813327942576}
+pipeline_id: VPI25F3KAEN1U8HB, pipeline_inference_times: {'start': 1778470177.9370303, 'finish': 1778471821.2340653, 'for_all': 1643.2970349788666, 'per_sample': 0.29344589910336905}
+pipeline_id: BF343RNNP46FA8AL, pipeline_inference_times: {'start': 1778471824.583838, 'finish': 1778473338.6456106, 'for_all': 1514.0617725849152, 'per_sample': 0.27036817367587773}
+pipeline_id: 4YPE14ENMHNV5XAR, pipeline_inference_times: {'start': 1778473340.6483204, 'finish': 1778477531.114091, 'for_all': 4190.465770483017, 'per_sample': 0.7482974590148245}
+pipeline_id: J8PMASJIP8UWVLLY, pipeline_inference_times: {'start': 1778477534.3134067, 'finish': 1778477746.363206, 'for_all': 212.04979920387268, 'per_sample': 0.03786603557212012}
+pipeline_id: CRRCWHIP8FW27V02, pipeline_inference_times: {'start': 1778477749.3246307, 'finish': 1778478035.7922275, 'for_all': 286.4675967693329, 'per_sample': 0.05115492799452373}
+pipeline_id: W3V064KG9FMNRRKK, pipeline_inference_times: {'start': 1778478036.585544, 'finish': 1778478524.5700707, 'for_all': 487.9845266342163, 'per_sample': 0.08714009404182434}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778440638.644471, 'finish': 1778478524.5700707, 'for_all': 37809.81905388832, 'per_sample': 6.751753402480058}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9827424107142857
+
+================
+
+results_file_id: XF6BQNMZF4JUTCQH
+dt_prediction_files_start_str: 2026-05-11_08-48-45
+seconds_prediction_files_creating: 1123.0886008739471
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 28
+pipeline_ids_str: P7ZOBJ4EPV9E21QE VORJ7T16CUEMLFCI 4JKGCHG1S5PRU1QE GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 LAU92CDIRLENRVJ2 4SPVJILO3E3MFD18 8OBXND4JCRCD3XDJ 61FAMWLKGB9SOUSS Y2KVR1FMOHOE3RK7 KRURVTFDZTFP2W9W J0WE4GXISHS5I3AX R6RAK7PK6YX2251R M9A0V6S6UAZ73FOS J6X2J1KV67MXHPM0 M6W1173DTE0B2RPL VCSU7TC0NDPWJPQP 5U0TER6M0CPBBKJG T2F87E3UBVD8EP58 AAR94SA9X4UILEFW T58K6ME6G3874VZ2 4TS0Z0NZNX87XECO QGPLNN4Y073DS25J 3V93P7Q5PAUXI6FM SI44OM5P6G19S1Z5 LICRMPBJG35RC1I4 V6WPA7SDLRQW3M6P VD6SSK6RF7P9ALM9
+n_pipelines_with_predict_proba: 28
+pipeline_ids_with_predict_proba_str: P7ZOBJ4EPV9E21QE VORJ7T16CUEMLFCI 4JKGCHG1S5PRU1QE GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 LAU92CDIRLENRVJ2 4SPVJILO3E3MFD18 8OBXND4JCRCD3XDJ 61FAMWLKGB9SOUSS Y2KVR1FMOHOE3RK7 KRURVTFDZTFP2W9W J0WE4GXISHS5I3AX R6RAK7PK6YX2251R M9A0V6S6UAZ73FOS J6X2J1KV67MXHPM0 M6W1173DTE0B2RPL VCSU7TC0NDPWJPQP 5U0TER6M0CPBBKJG T2F87E3UBVD8EP58 AAR94SA9X4UILEFW T58K6ME6G3874VZ2 4TS0Z0NZNX87XECO QGPLNN4Y073DS25J 3V93P7Q5PAUXI6FM SI44OM5P6G19S1Z5 LICRMPBJG35RC1I4 V6WPA7SDLRQW3M6P VD6SSK6RF7P9ALM9
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: P7ZOBJ4EPV9E21QE, pipeline_inference_times: {'start': 1778478526.7730186, 'finish': 1778478563.207809, 'for_all': 36.43479037284851, 'per_sample': 0.006506212566580091}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778478563.3771198, 'finish': 1778478622.9805515, 'for_all': 59.603431701660156, 'per_sample': 0.010643469946725027}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778478623.3371081, 'finish': 1778478674.0743933, 'for_all': 50.737285137176514, 'per_sample': 0.00906022948878152}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778478674.4417121, 'finish': 1778478695.2792282, 'for_all': 20.83751606941223, 'per_sample': 0.003720985012395041}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778478695.6531339, 'finish': 1778478723.363307, 'for_all': 27.7101731300354, 'per_sample': 0.004948245201792036}
+pipeline_id: LAU92CDIRLENRVJ2, pipeline_inference_times: {'start': 1778478726.3847895, 'finish': 1778478741.4910398, 'for_all': 15.106250286102295, 'per_sample': 0.0026975446939468384}
+pipeline_id: 4SPVJILO3E3MFD18, pipeline_inference_times: {'start': 1778478744.3892257, 'finish': 1778478811.4888923, 'for_all': 67.09966659545898, 'per_sample': 0.011982083320617676}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778478811.6188107, 'finish': 1778478874.677557, 'for_all': 63.058746337890625, 'per_sample': 0.011260490417480468}
+pipeline_id: 61FAMWLKGB9SOUSS, pipeline_inference_times: {'start': 1778478875.0340307, 'finish': 1778478913.5926218, 'for_all': 38.55859112739563, 'per_sample': 0.0068854627013206484}
+pipeline_id: Y2KVR1FMOHOE3RK7, pipeline_inference_times: {'start': 1778478913.981331, 'finish': 1778478970.2148829, 'for_all': 56.23355174064636, 'per_sample': 0.010041705667972564}
+pipeline_id: KRURVTFDZTFP2W9W, pipeline_inference_times: {'start': 1778478970.6368861, 'finish': 1778478997.3877792, 'for_all': 26.750893115997314, 'per_sample': 0.0047769451992852345}
+pipeline_id: J0WE4GXISHS5I3AX, pipeline_inference_times: {'start': 1778478997.8390026, 'finish': 1778479014.089229, 'for_all': 16.250226497650146, 'per_sample': 0.002901826160294669}
+pipeline_id: R6RAK7PK6YX2251R, pipeline_inference_times: {'start': 1778479014.2575567, 'finish': 1778479070.3301601, 'for_all': 56.07260346412659, 'per_sample': 0.010012964904308318}
+pipeline_id: M9A0V6S6UAZ73FOS, pipeline_inference_times: {'start': 1778479070.4915793, 'finish': 1778479140.0819836, 'for_all': 69.59040427207947, 'per_sample': 0.012426857905728476}
+pipeline_id: J6X2J1KV67MXHPM0, pipeline_inference_times: {'start': 1778479140.4443283, 'finish': 1778479153.1018324, 'for_all': 12.657504081726074, 'per_sample': 0.0022602685860225132}
+pipeline_id: M6W1173DTE0B2RPL, pipeline_inference_times: {'start': 1778479153.2307737, 'finish': 1778479206.212792, 'for_all': 52.98201823234558, 'per_sample': 0.009461074684347426}
+pipeline_id: VCSU7TC0NDPWJPQP, pipeline_inference_times: {'start': 1778479207.9622703, 'finish': 1778479236.1983104, 'for_all': 28.236040115356445, 'per_sample': 0.0050421500205993655}
+pipeline_id: 5U0TER6M0CPBBKJG, pipeline_inference_times: {'start': 1778479236.551666, 'finish': 1778479278.537078, 'for_all': 41.98541188240051, 'per_sample': 0.007497394979000091}
+pipeline_id: T2F87E3UBVD8EP58, pipeline_inference_times: {'start': 1778479278.8725877, 'finish': 1778479298.7380307, 'for_all': 19.865442991256714, 'per_sample': 0.0035474005341529845}
+pipeline_id: AAR94SA9X4UILEFW, pipeline_inference_times: {'start': 1778479298.837496, 'finish': 1778479359.5265377, 'for_all': 60.68904161453247, 'per_sample': 0.01083732885973794}
+pipeline_id: T58K6ME6G3874VZ2, pipeline_inference_times: {'start': 1778479360.3095589, 'finish': 1778479389.5304275, 'for_all': 29.220868587493896, 'per_sample': 0.005218012247766767}
+pipeline_id: 4TS0Z0NZNX87XECO, pipeline_inference_times: {'start': 1778479390.9930556, 'finish': 1778479402.7072668, 'for_all': 11.714211225509644, 'per_sample': 0.002091823433126722}
+pipeline_id: QGPLNN4Y073DS25J, pipeline_inference_times: {'start': 1778479404.8255465, 'finish': 1778479472.3166149, 'for_all': 67.4910683631897, 'per_sample': 0.012051976493426732}
+pipeline_id: 3V93P7Q5PAUXI6FM, pipeline_inference_times: {'start': 1778479472.7293844, 'finish': 1778479499.1443584, 'for_all': 26.414973974227905, 'per_sample': 0.004716959638254983}
+pipeline_id: SI44OM5P6G19S1Z5, pipeline_inference_times: {'start': 1778479501.6973457, 'finish': 1778479530.7883036, 'for_all': 29.09095788002014, 'per_sample': 0.005194813907146454}
+pipeline_id: LICRMPBJG35RC1I4, pipeline_inference_times: {'start': 1778479530.872761, 'finish': 1778479545.5170188, 'for_all': 14.64425778388977, 'per_sample': 0.002615046032837459}
+pipeline_id: V6WPA7SDLRQW3M6P, pipeline_inference_times: {'start': 1778479549.2927365, 'finish': 1778479606.7835813, 'for_all': 57.4908447265625, 'per_sample': 0.010266222272600446}
+pipeline_id: VD6SSK6RF7P9ALM9, pipeline_inference_times: {'start': 1778479606.9256709, 'finish': 1778479648.2006674, 'for_all': 41.274996519088745, 'per_sample': 0.007370535092694419}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778478526.7730186, 'finish': 1778479648.2006674, 'for_all': 1097.8017678260803, 'per_sample': 0.19603602996894293}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9893327806122449
+
+================
+
+results_file_id: UYWDNUUP2SW7YKKT
+dt_prediction_files_start_str: 2026-05-11_10-16-51
+seconds_prediction_files_creating: 197.55531573295593
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 3
+pipeline_ids_str: 1DFSGR0P3HIKSZWN E9QHA4SSVZCUR7UR SQYTH0VPB6I5ZMMM
+n_pipelines_with_predict_proba: 3
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN E9QHA4SSVZCUR7UR SQYTH0VPB6I5ZMMM
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778483811.868527, 'finish': 1778483874.3049886, 'for_all': 62.43646168708801, 'per_sample': 0.011149368158408574}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778483874.656647, 'finish': 1778483946.1708755, 'for_all': 71.5142285823822, 'per_sample': 0.01277039796113968}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778483946.5398917, 'finish': 1778484008.7804563, 'for_all': 62.240564584732056, 'per_sample': 0.011114386532987868}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778483811.868527, 'finish': 1778484008.7804563, 'for_all': 196.19125485420227, 'per_sample': 0.03503415265253612}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9932136479591837
+
+================
+
+results_file_id: 1I5NAOV4ANMKI4AA
+dt_prediction_files_start_str: 2026-05-11_10-20-09
+seconds_prediction_files_creating: 328.1024079322815
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 5
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE E9QHA4SSVZCUR7UR SQYTH0VPB6I5ZMMM WHY0DF76MJEV8K3S
+n_pipelines_with_predict_proba: 5
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE E9QHA4SSVZCUR7UR SQYTH0VPB6I5ZMMM WHY0DF76MJEV8K3S
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778484009.1653738, 'finish': 1778484070.4387343, 'for_all': 61.27336049079895, 'per_sample': 0.010941671516214098}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778484070.4916096, 'finish': 1778484134.4002652, 'for_all': 63.908655643463135, 'per_sample': 0.011412259936332703}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778484134.4282176, 'finish': 1778484207.3518221, 'for_all': 72.9236044883728, 'per_sample': 0.013022072230066573}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778484207.402542, 'finish': 1778484276.570745, 'for_all': 69.16820287704468, 'per_sample': 0.012351464799472264}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778484276.6861622, 'finish': 1778484336.8745234, 'for_all': 60.188361167907715, 'per_sample': 0.010747921637126378}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778484009.1653738, 'finish': 1778484336.8745234, 'for_all': 327.4621846675873, 'per_sample': 0.05847539011921202}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9930660714285714
+
+================
+
+results_file_id: OWF0F6CJNF8DR6IK
+dt_prediction_files_start_str: 2026-05-11_10-25-37
+seconds_prediction_files_creating: 384.05059480667114
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 6
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y SQYTH0VPB6I5ZMMM WHY0DF76MJEV8K3S
+n_pipelines_with_predict_proba: 6
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y SQYTH0VPB6I5ZMMM WHY0DF76MJEV8K3S
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778484337.325009, 'finish': 1778484402.9909234, 'for_all': 65.66591429710388, 'per_sample': 0.011726056124482836}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778484403.001242, 'finish': 1778484455.5364218, 'for_all': 52.53517985343933, 'per_sample': 0.009381282116685595}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778484455.5622034, 'finish': 1778484529.997353, 'for_all': 74.43514966964722, 'per_sample': 0.013291991012437002}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778484530.0589104, 'finish': 1778484551.5990407, 'for_all': 21.540130376815796, 'per_sample': 0.0038464518530028206}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778484551.6543655, 'finish': 1778484622.5633535, 'for_all': 70.9089879989624, 'per_sample': 0.012662319285529}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778484622.5944417, 'finish': 1778484720.9948432, 'for_all': 98.40040159225464, 'per_sample': 0.017571500284331184}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778484337.325009, 'finish': 1778484720.9948432, 'for_all': 383.48576378822327, 'per_sample': 0.06847960067646844}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9930301020408164
+
+================
+
+results_file_id: THXW9UBCBMXOQ2OG
+dt_prediction_files_start_str: 2026-05-11_10-32-01
+seconds_prediction_files_creating: 428.7081849575043
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 7
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+n_pipelines_with_predict_proba: 7
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778484721.428224, 'finish': 1778484786.9374244, 'for_all': 65.50920033454895, 'per_sample': 0.011698071488312313}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778484786.9471273, 'finish': 1778484839.9422848, 'for_all': 52.99515748023987, 'per_sample': 0.009463420978614263}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778484840.1044254, 'finish': 1778484919.2347414, 'for_all': 79.13031601905823, 'per_sample': 0.014130413574831826}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778484919.246184, 'finish': 1778484942.1940534, 'for_all': 22.947869300842285, 'per_sample': 0.004097833803721837}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778484942.243829, 'finish': 1778485018.6355476, 'for_all': 76.39171862602234, 'per_sample': 0.013641378326075418}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778485018.667581, 'finish': 1778485083.0843139, 'for_all': 64.41673278808594, 'per_sample': 0.011502987997872489}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778485083.1159873, 'finish': 1778485149.448591, 'for_all': 66.33260369300842, 'per_sample': 0.011845107802322933}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778484721.428224, 'finish': 1778485149.448591, 'for_all': 427.72359824180603, 'per_sample': 0.07637921397175108}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9930485969387755
+
+================
+
+results_file_id: DDXYKH3J06LNMYCK
+dt_prediction_files_start_str: 2026-05-11_10-39-10
+seconds_prediction_files_creating: 547.5512216091156
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 8
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 8OBXND4JCRCD3XDJ E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+n_pipelines_with_predict_proba: 8
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 8OBXND4JCRCD3XDJ E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778485150.1639383, 'finish': 1778485221.705745, 'for_all': 71.54180669784546, 'per_sample': 0.012775322624615261}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778485221.7216985, 'finish': 1778485277.3879879, 'for_all': 55.66628932952881, 'per_sample': 0.00994040880884443}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778485277.4889538, 'finish': 1778485346.0241244, 'for_all': 68.53517055511475, 'per_sample': 0.012238423313413347}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778485346.0536451, 'finish': 1778485428.2280033, 'for_all': 82.17435812950134, 'per_sample': 0.01467399252312524}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778485428.2384117, 'finish': 1778485450.9322798, 'for_all': 22.693868160247803, 'per_sample': 0.004052476457187108}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778485450.9844713, 'finish': 1778485527.2380557, 'for_all': 76.25358438491821, 'per_sample': 0.013616711497306824}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778485527.2504656, 'finish': 1778485593.7975707, 'for_all': 66.54710507392883, 'per_sample': 0.011883411620344434}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778485593.8398108, 'finish': 1778485697.0116596, 'for_all': 103.1718487739563, 'per_sample': 0.018423544423920767}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778485150.1639383, 'finish': 1778485697.0116596, 'for_all': 546.5840311050415, 'per_sample': 0.09760429126875741}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9929244897959184
+
+================
+
+results_file_id: 33B6QXDGO6FY74W3
+dt_prediction_files_start_str: 2026-05-11_10-48-17
+seconds_prediction_files_creating: 586.6622552871704
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 10
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 8OBXND4JCRCD3XDJ E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 NDR8VPT5WA6KQYS1 SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+n_pipelines_with_predict_proba: 10
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 8OBXND4JCRCD3XDJ E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 NDR8VPT5WA6KQYS1 SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778485697.9110756, 'finish': 1778485769.5202808, 'for_all': 71.60920524597168, 'per_sample': 0.0127873580796378}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778485769.5308645, 'finish': 1778485825.9697452, 'for_all': 56.43888068199158, 'per_sample': 0.010078371550355639}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778485825.9800642, 'finish': 1778485895.1908596, 'for_all': 69.21079540252686, 'per_sample': 0.01235907060759408}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778485895.2158427, 'finish': 1778485977.2313862, 'for_all': 82.01554346084595, 'per_sample': 0.014645632760865347}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778485977.2414384, 'finish': 1778486000.289856, 'for_all': 23.048417568206787, 'per_sample': 0.0041157888514654975}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778486000.6433868, 'finish': 1778486030.8530376, 'for_all': 30.20965075492859, 'per_sample': 0.005394580491951534}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778486031.1979246, 'finish': 1778486075.6628854, 'for_all': 44.46496081352234, 'per_sample': 0.007940171573843274}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778486075.7128556, 'finish': 1778486152.6283255, 'for_all': 76.91546988487244, 'per_sample': 0.013734905336584363}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778486152.6393828, 'finish': 1778486216.6474938, 'for_all': 64.00811100006104, 'per_sample': 0.01143001982143947}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778486216.6808736, 'finish': 1778486283.7566373, 'for_all': 67.07576370239258, 'per_sample': 0.011977814946855818}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778485697.9110756, 'finish': 1778486283.7566373, 'for_all': 584.9967985153198, 'per_sample': 0.10446371402059282}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9884838010204081
+
+================
+
+results_file_id: VRPPMDISS19B8J3Y
+dt_prediction_files_start_str: 2026-05-11_10-58-04
+seconds_prediction_files_creating: 1219.8965623378754
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 13
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI NDR8VPT5WA6KQYS1 SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+n_pipelines_with_predict_proba: 13
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI NDR8VPT5WA6KQYS1 SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778486284.6259644, 'finish': 1778486356.224092, 'for_all': 71.59812760353088, 'per_sample': 0.012785379929201944}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778486356.2356834, 'finish': 1778486412.403838, 'for_all': 56.16815447807312, 'per_sample': 0.0100300275853702}
+pipeline_id: 61FAMWLKGB9SOUSS, pipeline_inference_times: {'start': 1778486412.508019, 'finish': 1778486454.4949052, 'for_all': 41.98688626289368, 'per_sample': 0.007497658261231013}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778486454.5046082, 'finish': 1778486522.8064628, 'for_all': 68.30185461044312, 'per_sample': 0.012196759751864843}
+pipeline_id: E9BTJQ4B8543P511, pipeline_inference_times: {'start': 1778486523.2316315, 'finish': 1778486600.1202931, 'for_all': 76.8886616230011, 'per_sample': 0.013730118146964482}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778486600.143569, 'finish': 1778486681.432103, 'for_all': 81.28853392601013, 'per_sample': 0.014515809629644666}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778486681.4426472, 'finish': 1778486703.9482281, 'for_all': 22.50558090209961, 'per_sample': 0.004018853732517787}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778486703.9613113, 'finish': 1778486735.209711, 'for_all': 31.24839973449707, 'per_sample': 0.005580071381160191}
+pipeline_id: KKIBVHP1UZKDO1DI, pipeline_inference_times: {'start': 1778486735.3376646, 'finish': 1778487271.594519, 'for_all': 536.2568542957306, 'per_sample': 0.09576015255280904}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778487271.610331, 'finish': 1778487311.9805477, 'for_all': 40.370216608047485, 'per_sample': 0.007208967251437051}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778487312.0286028, 'finish': 1778487382.497306, 'for_all': 70.4687032699585, 'per_sample': 0.012583697012492588}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778487382.5084963, 'finish': 1778487442.5214655, 'for_all': 60.01296925544739, 'per_sample': 0.010716601652758463}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778487442.5441687, 'finish': 1778487503.711143, 'for_all': 61.16697430610657, 'per_sample': 0.010922673983233315}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778486284.6259644, 'finish': 1778487503.711143, 'for_all': 1218.2619168758392, 'per_sample': 0.21754677087068558}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9885323979591837
+
+================
+
+results_file_id: MP5FS3ZNYEJVFP0I
+dt_prediction_files_start_str: 2026-05-11_11-18-24
+seconds_prediction_files_creating: 3362.457917690277
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 20
+pipeline_ids_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ BVHAH7ZIPL5YFEUN E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ NDR8VPT5WA6KQYS1 SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S Y2KVR1FMOHOE3RK7
+n_pipelines_with_predict_proba: 20
+pipeline_ids_with_predict_proba_str: 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ BVHAH7ZIPL5YFEUN E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ NDR8VPT5WA6KQYS1 SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S Y2KVR1FMOHOE3RK7
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778487504.444647, 'finish': 1778487574.7594154, 'for_all': 70.31476831436157, 'per_sample': 0.012556208627564567}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778487574.7701929, 'finish': 1778487633.068369, 'for_all': 58.29817605018616, 'per_sample': 0.010410388580390385}
+pipeline_id: 61FAMWLKGB9SOUSS, pipeline_inference_times: {'start': 1778487633.076992, 'finish': 1778487674.6398015, 'for_all': 41.562809467315674, 'per_sample': 0.007421930262020656}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778487674.6523283, 'finish': 1778487742.8570392, 'for_all': 68.20471096038818, 'per_sample': 0.012179412671497889}
+pipeline_id: BVHAH7ZIPL5YFEUN, pipeline_inference_times: {'start': 1778487743.2275581, 'finish': 1778488188.3560512, 'for_all': 445.1284930706024, 'per_sample': 0.07948723090546472}
+pipeline_id: E9BTJQ4B8543P511, pipeline_inference_times: {'start': 1778488188.4133697, 'finish': 1778488259.2436125, 'for_all': 70.83024287223816, 'per_sample': 0.012648257655756815}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778488259.2725348, 'finish': 1778488334.4848878, 'for_all': 75.21235299110413, 'per_sample': 0.013430777319840022}
+pipeline_id: FCHMHCKS4G81M9JN, pipeline_inference_times: {'start': 1778488334.8608792, 'finish': 1778488856.3910065, 'for_all': 521.530127286911, 'per_sample': 0.09313037987266268}
+pipeline_id: FO8ALJEXGCDC1D53, pipeline_inference_times: {'start': 1778488856.4334497, 'finish': 1778489469.2641377, 'for_all': 612.8306879997253, 'per_sample': 0.10943405142852239}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778489469.2713795, 'finish': 1778489491.066467, 'for_all': 21.795087575912476, 'per_sample': 0.003891979924270085}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778489491.0783806, 'finish': 1778489519.713695, 'for_all': 28.635314464569092, 'per_sample': 0.005113449011530195}
+pipeline_id: KKIBVHP1UZKDO1DI, pipeline_inference_times: {'start': 1778489519.735306, 'finish': 1778490064.22666, 'for_all': 544.4913539886475, 'per_sample': 0.09723059892654419}
+pipeline_id: KRURVTFDZTFP2W9W, pipeline_inference_times: {'start': 1778490064.6356063, 'finish': 1778490093.7125218, 'for_all': 29.076915502548218, 'per_sample': 0.005192306339740754}
+pipeline_id: LTQ1N191M1N0H6FF, pipeline_inference_times: {'start': 1778490093.7936056, 'finish': 1778490097.543763, 'for_all': 3.750157356262207, 'per_sample': 0.0006696709564753941}
+pipeline_id: LZZYQR7V98O89XAZ, pipeline_inference_times: {'start': 1778490097.6553829, 'finish': 1778490565.686077, 'for_all': 468.0306942462921, 'per_sample': 0.08357690968683788}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778490565.7047765, 'finish': 1778490607.9220989, 'for_all': 42.21732234954834, 'per_sample': 0.007538807562419346}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778490607.977326, 'finish': 1778490679.3659077, 'for_all': 71.3885817527771, 'per_sample': 0.012747961027281625}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778490679.3769517, 'finish': 1778490742.2155776, 'for_all': 62.83862590789795, 'per_sample': 0.01122118319783892}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778490742.2533808, 'finish': 1778490804.7653491, 'for_all': 62.51196837425232, 'per_sample': 0.0111628514954022}
+pipeline_id: Y2KVR1FMOHOE3RK7, pipeline_inference_times: {'start': 1778490804.8383548, 'finish': 1778490866.4973583, 'for_all': 61.659003496170044, 'per_sample': 0.011010536338601794}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778487504.444647, 'finish': 1778490866.4973583, 'for_all': 3360.30739402771, 'per_sample': 0.6000548917906625}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9885100765306123
+
+================
+
+results_file_id: WLRGFBMJKMEVO1Z4
+dt_prediction_files_start_str: 2026-05-11_12-14-26
+seconds_prediction_files_creating: 3839.4392549991608
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 26
+pipeline_ids_str: 00AJXM6WQ5XXJLB1 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ BVHAH7ZIPL5YFEUN C6WJJ04WCT9J8NMS E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y JH9VT5WHGQM3L852 K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ M9A0V6S6UAZ73FOS NDR8VPT5WA6KQYS1 R6RAK7PK6YX2251R SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S XNM4FNEXYHHOFHOZ Y2KVR1FMOHOE3RK7
+n_pipelines_with_predict_proba: 26
+pipeline_ids_with_predict_proba_str: 00AJXM6WQ5XXJLB1 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ BVHAH7ZIPL5YFEUN C6WJJ04WCT9J8NMS E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y JH9VT5WHGQM3L852 K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ M9A0V6S6UAZ73FOS NDR8VPT5WA6KQYS1 R6RAK7PK6YX2251R SQYTH0VPB6I5ZMMM VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S XNM4FNEXYHHOFHOZ Y2KVR1FMOHOE3RK7
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 00AJXM6WQ5XXJLB1, pipeline_inference_times: {'start': 1778490866.9210072, 'finish': 1778490995.407132, 'for_all': 128.48612475395203, 'per_sample': 0.022943950848920005}
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778490995.4561334, 'finish': 1778491059.7963831, 'for_all': 64.34024977684021, 'per_sample': 0.011489330317292894}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778491059.8064182, 'finish': 1778491117.295122, 'for_all': 57.48870372772217, 'per_sample': 0.010265839951378959}
+pipeline_id: 61FAMWLKGB9SOUSS, pipeline_inference_times: {'start': 1778491117.3045743, 'finish': 1778491159.8690717, 'for_all': 42.56449747085571, 'per_sample': 0.007600803119795663}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778491159.8799014, 'finish': 1778491229.7261958, 'for_all': 69.84629440307617, 'per_sample': 0.012472552571977888}
+pipeline_id: BVHAH7ZIPL5YFEUN, pipeline_inference_times: {'start': 1778491229.7440395, 'finish': 1778491681.7931666, 'for_all': 452.0491271018982, 'per_sample': 0.08072305841105325}
+pipeline_id: C6WJJ04WCT9J8NMS, pipeline_inference_times: {'start': 1778491682.2177653, 'finish': 1778491744.2347977, 'for_all': 62.01703238487244, 'per_sample': 0.011074470068727221}
+pipeline_id: E9BTJQ4B8543P511, pipeline_inference_times: {'start': 1778491744.2919118, 'finish': 1778491813.8587902, 'for_all': 69.56687831878662, 'per_sample': 0.012422656842640468}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778491813.8837261, 'finish': 1778491888.2591398, 'for_all': 74.37541365623474, 'per_sample': 0.013281323867184775}
+pipeline_id: FCHMHCKS4G81M9JN, pipeline_inference_times: {'start': 1778491888.280668, 'finish': 1778492399.6922429, 'for_all': 511.41157484054565, 'per_sample': 0.0913234955072403}
+pipeline_id: FO8ALJEXGCDC1D53, pipeline_inference_times: {'start': 1778492399.7090714, 'finish': 1778493020.4899187, 'for_all': 620.7808473110199, 'per_sample': 0.11085372273411069}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778493020.8369277, 'finish': 1778493042.4191468, 'for_all': 21.582219123840332, 'per_sample': 0.0038539677006857735}
+pipeline_id: JH9VT5WHGQM3L852, pipeline_inference_times: {'start': 1778493042.516846, 'finish': 1778493092.333764, 'for_all': 49.81691813468933, 'per_sample': 0.00889587823833738}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778493092.525557, 'finish': 1778493123.8088892, 'for_all': 31.283332109451294, 'per_sample': 0.005586309305259159}
+pipeline_id: KKIBVHP1UZKDO1DI, pipeline_inference_times: {'start': 1778493123.9302285, 'finish': 1778493660.8742335, 'for_all': 536.9440050125122, 'per_sample': 0.0958828580379486}
+pipeline_id: KRURVTFDZTFP2W9W, pipeline_inference_times: {'start': 1778493661.2433157, 'finish': 1778493688.0986426, 'for_all': 26.855326890945435, 'per_sample': 0.004795594087668827}
+pipeline_id: LTQ1N191M1N0H6FF, pipeline_inference_times: {'start': 1778493688.1923635, 'finish': 1778493691.6866822, 'for_all': 3.494318723678589, 'per_sample': 0.0006239854863711766}
+pipeline_id: LZZYQR7V98O89XAZ, pipeline_inference_times: {'start': 1778493691.789658, 'finish': 1778494147.8914194, 'for_all': 456.10176134109497, 'per_sample': 0.0814467430966241}
+pipeline_id: M9A0V6S6UAZ73FOS, pipeline_inference_times: {'start': 1778494147.990563, 'finish': 1778494218.1954834, 'for_all': 70.20492053031921, 'per_sample': 0.012536592951842717}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778494218.2802832, 'finish': 1778494257.96669, 'for_all': 39.68640685081482, 'per_sample': 0.007086858366216932}
+pipeline_id: R6RAK7PK6YX2251R, pipeline_inference_times: {'start': 1778494258.0206223, 'finish': 1778494315.0238624, 'for_all': 57.00324010848999, 'per_sample': 0.010179150019373213}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778494315.1625261, 'finish': 1778494384.415795, 'for_all': 69.25326895713806, 'per_sample': 0.012366655170917512}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778494384.452626, 'finish': 1778494445.7532673, 'for_all': 61.30064129829407, 'per_sample': 0.010946543088981084}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778494445.82183, 'finish': 1778494505.7188742, 'for_all': 59.89704418182373, 'per_sample': 0.010695900746754238}
+pipeline_id: XNM4FNEXYHHOFHOZ, pipeline_inference_times: {'start': 1778494505.7602234, 'finish': 1778494648.2768784, 'for_all': 142.51665496826172, 'per_sample': 0.025449402672903878}
+pipeline_id: Y2KVR1FMOHOE3RK7, pipeline_inference_times: {'start': 1778494648.351731, 'finish': 1778494705.9911697, 'for_all': 57.63943862915039, 'per_sample': 0.01029275689806257}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778490866.9210072, 'finish': 1778494705.9911697, 'for_all': 3836.506240606308, 'per_sample': 0.6850904001082693}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9885081632653061
+
+================
+
+results_file_id: 3LKH8LEQE8LHO3BX
+dt_prediction_files_start_str: 2026-05-11_13-18-26
+seconds_prediction_files_creating: 4726.412028551102
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 33
+pipeline_ids_str: 00AJXM6WQ5XXJLB1 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 5U0TER6M0CPBBKJG 60PRJ77TAYZ3OZG3 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ BVHAH7ZIPL5YFEUN C6WJJ04WCT9J8NMS E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y IBDPU452AIF7BI20 JH9VT5WHGQM3L852 K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ M6W1173DTE0B2RPL M9A0V6S6UAZ73FOS NA1PXBY6NTXEAFF0 NDR8VPT5WA6KQYS1 QIKMQAVVWPKSU3S4 R6RAK7PK6YX2251R SQYTH0VPB6I5ZMMM T2F87E3UBVD8EP58 VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S XNM4FNEXYHHOFHOZ Y2KVR1FMOHOE3RK7
+n_pipelines_with_predict_proba: 33
+pipeline_ids_with_predict_proba_str: 00AJXM6WQ5XXJLB1 1DFSGR0P3HIKSZWN 4JKGCHG1S5PRU1QE 5U0TER6M0CPBBKJG 60PRJ77TAYZ3OZG3 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ BVHAH7ZIPL5YFEUN C6WJJ04WCT9J8NMS E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y IBDPU452AIF7BI20 JH9VT5WHGQM3L852 K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ M6W1173DTE0B2RPL M9A0V6S6UAZ73FOS NA1PXBY6NTXEAFF0 NDR8VPT5WA6KQYS1 QIKMQAVVWPKSU3S4 R6RAK7PK6YX2251R SQYTH0VPB6I5ZMMM T2F87E3UBVD8EP58 VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S XNM4FNEXYHHOFHOZ Y2KVR1FMOHOE3RK7
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 00AJXM6WQ5XXJLB1, pipeline_inference_times: {'start': 1778494706.4416165, 'finish': 1778494830.9790757, 'for_all': 124.53745913505554, 'per_sample': 0.022238831988402777}
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778494831.1324093, 'finish': 1778494896.4521074, 'for_all': 65.31969809532166, 'per_sample': 0.01166423180273601}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778494896.4988015, 'finish': 1778494949.0484915, 'for_all': 52.54969000816345, 'per_sample': 0.009383873215743474}
+pipeline_id: 5U0TER6M0CPBBKJG, pipeline_inference_times: {'start': 1778494949.1261556, 'finish': 1778494992.7759252, 'for_all': 43.64976954460144, 'per_sample': 0.007794601704393114}
+pipeline_id: 60PRJ77TAYZ3OZG3, pipeline_inference_times: {'start': 1778494992.8260505, 'finish': 1778495233.612522, 'for_all': 240.78647136688232, 'per_sample': 0.04299758417265756}
+pipeline_id: 61FAMWLKGB9SOUSS, pipeline_inference_times: {'start': 1778495233.6542425, 'finish': 1778495272.9858077, 'for_all': 39.331565141677856, 'per_sample': 0.0070234937752996175}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778495273.0226727, 'finish': 1778495336.4418132, 'for_all': 63.419140577316284, 'per_sample': 0.011324846531663622}
+pipeline_id: BVHAH7ZIPL5YFEUN, pipeline_inference_times: {'start': 1778495336.7714052, 'finish': 1778495782.946983, 'for_all': 446.175577878952, 'per_sample': 0.07967421033552714}
+pipeline_id: C6WJJ04WCT9J8NMS, pipeline_inference_times: {'start': 1778495783.3420537, 'finish': 1778495846.495769, 'for_all': 63.15371537208557, 'per_sample': 0.01127744917358671}
+pipeline_id: E9BTJQ4B8543P511, pipeline_inference_times: {'start': 1778495846.693674, 'finish': 1778495917.2478461, 'for_all': 70.55417203903198, 'per_sample': 0.012598959292684283}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778495917.3118155, 'finish': 1778495991.0463755, 'for_all': 73.73456001281738, 'per_sample': 0.013166885716574532}
+pipeline_id: FCHMHCKS4G81M9JN, pipeline_inference_times: {'start': 1778495991.0972562, 'finish': 1778496502.7420385, 'for_all': 511.6447823047638, 'per_sample': 0.09136513969727925}
+pipeline_id: FO8ALJEXGCDC1D53, pipeline_inference_times: {'start': 1778496503.058021, 'finish': 1778497096.6718335, 'for_all': 593.6138124465942, 'per_sample': 0.1060024665083204}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778497096.6810393, 'finish': 1778497117.9202821, 'for_all': 21.239242792129517, 'per_sample': 0.0037927219271659852}
+pipeline_id: IBDPU452AIF7BI20, pipeline_inference_times: {'start': 1778497118.416222, 'finish': 1778497326.383937, 'for_all': 207.96771478652954, 'per_sample': 0.03713709192616599}
+pipeline_id: JH9VT5WHGQM3L852, pipeline_inference_times: {'start': 1778497326.4055624, 'finish': 1778497374.9239259, 'for_all': 48.51836347579956, 'per_sample': 0.00866399347782135}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778497374.9670157, 'finish': 1778497403.7660406, 'for_all': 28.79902482032776, 'per_sample': 0.005142683003629957}
+pipeline_id: KKIBVHP1UZKDO1DI, pipeline_inference_times: {'start': 1778497403.789171, 'finish': 1778497937.4440577, 'for_all': 533.6548867225647, 'per_sample': 0.09529551548617227}
+pipeline_id: KRURVTFDZTFP2W9W, pipeline_inference_times: {'start': 1778497937.4544237, 'finish': 1778497964.8037736, 'for_all': 27.349349975585938, 'per_sample': 0.004883812495640346}
+pipeline_id: LTQ1N191M1N0H6FF, pipeline_inference_times: {'start': 1778497964.80471, 'finish': 1778497968.3301075, 'for_all': 3.525397539138794, 'per_sample': 0.0006295352748462132}
+pipeline_id: LZZYQR7V98O89XAZ, pipeline_inference_times: {'start': 1778497968.3498192, 'finish': 1778498430.5022194, 'for_all': 462.15240025520325, 'per_sample': 0.08252721433128629}
+pipeline_id: M6W1173DTE0B2RPL, pipeline_inference_times: {'start': 1778498430.9034095, 'finish': 1778498483.668251, 'for_all': 52.76484155654907, 'per_sample': 0.009422293135098049}
+pipeline_id: M9A0V6S6UAZ73FOS, pipeline_inference_times: {'start': 1778498483.6830456, 'finish': 1778498552.7705376, 'for_all': 69.08749198913574, 'per_sample': 0.012337052140917097}
+pipeline_id: NA1PXBY6NTXEAFF0, pipeline_inference_times: {'start': 1778498552.8639328, 'finish': 1778498556.2276845, 'for_all': 3.3637516498565674, 'per_sample': 0.000600669937474387}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778498556.2504253, 'finish': 1778498596.591306, 'for_all': 40.34088063240051, 'per_sample': 0.0072037286843572345}
+pipeline_id: QIKMQAVVWPKSU3S4, pipeline_inference_times: {'start': 1778498596.9339185, 'finish': 1778498924.8892949, 'for_all': 327.95537638664246, 'per_sample': 0.0585634600690433}
+pipeline_id: R6RAK7PK6YX2251R, pipeline_inference_times: {'start': 1778498924.8968618, 'finish': 1778498981.935371, 'for_all': 57.038509130477905, 'per_sample': 0.010185448059013912}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778498982.0015116, 'finish': 1778499053.961975, 'for_all': 71.96046352386475, 'per_sample': 0.012850082772118705}
+pipeline_id: T2F87E3UBVD8EP58, pipeline_inference_times: {'start': 1778499053.9967496, 'finish': 1778499074.2488863, 'for_all': 20.252136707305908, 'per_sample': 0.0036164529834474836}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778499074.2580552, 'finish': 1778499134.542366, 'for_all': 60.284310817718506, 'per_sample': 0.010765055503164018}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778499134.5773408, 'finish': 1778499232.6479838, 'for_all': 98.07064294815063, 'per_sample': 0.017512614812169758}
+pipeline_id: XNM4FNEXYHHOFHOZ, pipeline_inference_times: {'start': 1778499232.654469, 'finish': 1778499374.9424846, 'for_all': 142.28801560401917, 'per_sample': 0.02540857421500342}
+pipeline_id: Y2KVR1FMOHOE3RK7, pipeline_inference_times: {'start': 1778499374.9528425, 'finish': 1778499432.2612154, 'for_all': 57.30837297439575, 'per_sample': 0.010233638031142099}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778494706.4416165, 'finish': 1778499432.2612154, 'for_all': 4722.39158821106, 'per_sample': 0.8432842121805464}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9884063775510205
+
+================
+
+results_file_id: 5LJM512SKQOXY2G5
+dt_prediction_files_start_str: 2026-05-11_14-37-12
+seconds_prediction_files_creating: 5374.754914283752
+digits_round_min: 18, digits_round_max: 18
+n_pipeline_ids: 37
+pipeline_ids_str: 00AJXM6WQ5XXJLB1 1DFSGR0P3HIKSZWN 1PJEE7DXORS28YC8 4JKGCHG1S5PRU1QE 5U0TER6M0CPBBKJG 60PRJ77TAYZ3OZG3 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ AAR94SA9X4UILEFW BVHAH7ZIPL5YFEUN C6WJJ04WCT9J8NMS E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y IBA5NJPVBNDODF1N IBDPU452AIF7BI20 JH9VT5WHGQM3L852 K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ M6W1173DTE0B2RPL M9A0V6S6UAZ73FOS NA1PXBY6NTXEAFF0 NDR8VPT5WA6KQYS1 QIKMQAVVWPKSU3S4 R6RAK7PK6YX2251R SQYTH0VPB6I5ZMMM T2F87E3UBVD8EP58 VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S XNM4FNEXYHHOFHOZ Y2KVR1FMOHOE3RK7 ZQ8HMXUVKFLEK5ZM
+n_pipelines_with_predict_proba: 37
+pipeline_ids_with_predict_proba_str: 00AJXM6WQ5XXJLB1 1DFSGR0P3HIKSZWN 1PJEE7DXORS28YC8 4JKGCHG1S5PRU1QE 5U0TER6M0CPBBKJG 60PRJ77TAYZ3OZG3 61FAMWLKGB9SOUSS 8OBXND4JCRCD3XDJ AAR94SA9X4UILEFW BVHAH7ZIPL5YFEUN C6WJJ04WCT9J8NMS E9BTJQ4B8543P511 E9QHA4SSVZCUR7UR FCHMHCKS4G81M9JN FO8ALJEXGCDC1D53 GMAX8DXE0BLZ0E3Y IBA5NJPVBNDODF1N IBDPU452AIF7BI20 JH9VT5WHGQM3L852 K33XVEGCU0B3BOF2 KKIBVHP1UZKDO1DI KRURVTFDZTFP2W9W LTQ1N191M1N0H6FF LZZYQR7V98O89XAZ M6W1173DTE0B2RPL M9A0V6S6UAZ73FOS NA1PXBY6NTXEAFF0 NDR8VPT5WA6KQYS1 QIKMQAVVWPKSU3S4 R6RAK7PK6YX2251R SQYTH0VPB6I5ZMMM T2F87E3UBVD8EP58 VORJ7T16CUEMLFCI WHY0DF76MJEV8K3S XNM4FNEXYHHOFHOZ Y2KVR1FMOHOE3RK7 ZQ8HMXUVKFLEK5ZM
+Времена инференса пайпайнов (в секундах), без времён усреднения результатов и вычисления метрики для closed_data (если выбрано эту метрику вычислять):
+pipeline_id: 00AJXM6WQ5XXJLB1, pipeline_inference_times: {'start': 1778499432.9125497, 'finish': 1778499557.3086364, 'for_all': 124.39608669281006, 'per_sample': 0.022213586909430368}
+pipeline_id: 1DFSGR0P3HIKSZWN, pipeline_inference_times: {'start': 1778499557.3631854, 'finish': 1778499623.3464465, 'for_all': 65.98326110839844, 'per_sample': 0.011782725197928293}
+pipeline_id: 1PJEE7DXORS28YC8, pipeline_inference_times: {'start': 1778499623.4647982, 'finish': 1778499626.7805598, 'for_all': 3.3157615661621094, 'per_sample': 0.0005921002796718053}
+pipeline_id: 4JKGCHG1S5PRU1QE, pipeline_inference_times: {'start': 1778499626.7875679, 'finish': 1778499678.6314619, 'for_all': 51.84389400482178, 'per_sample': 0.009257838215146747}
+pipeline_id: 5U0TER6M0CPBBKJG, pipeline_inference_times: {'start': 1778499678.6446302, 'finish': 1778499722.1887286, 'for_all': 43.54409837722778, 'per_sample': 0.00777573185307639}
+pipeline_id: 60PRJ77TAYZ3OZG3, pipeline_inference_times: {'start': 1778499722.1985922, 'finish': 1778499964.1218228, 'for_all': 241.92323064804077, 'per_sample': 0.043200576901435854}
+pipeline_id: 61FAMWLKGB9SOUSS, pipeline_inference_times: {'start': 1778499964.1357765, 'finish': 1778500006.6334581, 'for_all': 42.497681617736816, 'per_sample': 0.007588871717453003}
+pipeline_id: 8OBXND4JCRCD3XDJ, pipeline_inference_times: {'start': 1778500006.655146, 'finish': 1778500072.413566, 'for_all': 65.75842022895813, 'per_sample': 0.01174257504088538}
+pipeline_id: AAR94SA9X4UILEFW, pipeline_inference_times: {'start': 1778500072.4832172, 'finish': 1778500134.2202125, 'for_all': 61.736995220184326, 'per_sample': 0.011024463432175773}
+pipeline_id: BVHAH7ZIPL5YFEUN, pipeline_inference_times: {'start': 1778500134.2383497, 'finish': 1778500579.583633, 'for_all': 445.3452832698822, 'per_sample': 0.07952594344105039}
+pipeline_id: C6WJJ04WCT9J8NMS, pipeline_inference_times: {'start': 1778500579.613812, 'finish': 1778500644.1112733, 'for_all': 64.49746131896973, 'per_sample': 0.011517403806958879}
+pipeline_id: E9BTJQ4B8543P511, pipeline_inference_times: {'start': 1778500644.1480732, 'finish': 1778500715.9700463, 'for_all': 71.82197308540344, 'per_sample': 0.012825352336679186}
+pipeline_id: E9QHA4SSVZCUR7UR, pipeline_inference_times: {'start': 1778500716.0007563, 'finish': 1778500790.2720716, 'for_all': 74.27131533622742, 'per_sample': 0.013262734881469182}
+pipeline_id: FCHMHCKS4G81M9JN, pipeline_inference_times: {'start': 1778500790.2936704, 'finish': 1778501299.5306568, 'for_all': 509.2369863986969, 'per_sample': 0.09093517614262445}
+pipeline_id: FO8ALJEXGCDC1D53, pipeline_inference_times: {'start': 1778501299.5476189, 'finish': 1778501892.7002242, 'for_all': 593.1526052951813, 'per_sample': 0.10592010808842522}
+pipeline_id: GMAX8DXE0BLZ0E3Y, pipeline_inference_times: {'start': 1778501892.7095273, 'finish': 1778501913.7833796, 'for_all': 21.07385230064392, 'per_sample': 0.0037631879108292717}
+pipeline_id: IBA5NJPVBNDODF1N, pipeline_inference_times: {'start': 1778501914.1784723, 'finish': 1778502404.3784182, 'for_all': 490.19994592666626, 'per_sample': 0.08753570462976183}
+pipeline_id: IBDPU452AIF7BI20, pipeline_inference_times: {'start': 1778502404.3848112, 'finish': 1778502611.8122365, 'for_all': 207.42742538452148, 'per_sample': 0.03704061167580741}
+pipeline_id: JH9VT5WHGQM3L852, pipeline_inference_times: {'start': 1778502611.8272798, 'finish': 1778502661.7159355, 'for_all': 49.88865566253662, 'per_sample': 0.008908688511167254}
+pipeline_id: K33XVEGCU0B3BOF2, pipeline_inference_times: {'start': 1778502661.7285879, 'finish': 1778502690.2404263, 'for_all': 28.51183843612671, 'per_sample': 0.005091399720736912}
+pipeline_id: KKIBVHP1UZKDO1DI, pipeline_inference_times: {'start': 1778502690.2618275, 'finish': 1778503223.5195436, 'for_all': 533.257716178894, 'per_sample': 0.0952245921748025}
+pipeline_id: KRURVTFDZTFP2W9W, pipeline_inference_times: {'start': 1778503223.5273204, 'finish': 1778503250.5542917, 'for_all': 27.026971340179443, 'per_sample': 0.0048262448821749}
+pipeline_id: LTQ1N191M1N0H6FF, pipeline_inference_times: {'start': 1778503250.5552886, 'finish': 1778503254.0484133, 'for_all': 3.4931247234344482, 'per_sample': 0.0006237722720418658}
+pipeline_id: LZZYQR7V98O89XAZ, pipeline_inference_times: {'start': 1778503254.061832, 'finish': 1778503710.0782943, 'for_all': 456.0164623260498, 'per_sample': 0.08143151112965175}
+pipeline_id: M6W1173DTE0B2RPL, pipeline_inference_times: {'start': 1778503710.0854115, 'finish': 1778503763.8725505, 'for_all': 53.78713893890381, 'per_sample': 0.009604846239089965}
+pipeline_id: M9A0V6S6UAZ73FOS, pipeline_inference_times: {'start': 1778503763.8877938, 'finish': 1778503834.339187, 'for_all': 70.4513931274414, 'per_sample': 0.012580605915614537}
+pipeline_id: NA1PXBY6NTXEAFF0, pipeline_inference_times: {'start': 1778503834.3400853, 'finish': 1778503837.6953256, 'for_all': 3.3552403450012207, 'per_sample': 0.0005991500616073608}
+pipeline_id: NDR8VPT5WA6KQYS1, pipeline_inference_times: {'start': 1778503837.7281215, 'finish': 1778503958.518596, 'for_all': 120.79047441482544, 'per_sample': 0.02156972757407597}
+pipeline_id: QIKMQAVVWPKSU3S4, pipeline_inference_times: {'start': 1778503958.5351875, 'finish': 1778504285.8994598, 'for_all': 327.3642723560333, 'per_sample': 0.05845790577786309}
+pipeline_id: R6RAK7PK6YX2251R, pipeline_inference_times: {'start': 1778504285.9084442, 'finish': 1778504342.303175, 'for_all': 56.39473080635071, 'per_sample': 0.010070487643991198}
+pipeline_id: SQYTH0VPB6I5ZMMM, pipeline_inference_times: {'start': 1778504342.3604898, 'finish': 1778504413.1304395, 'for_all': 70.76994967460632, 'per_sample': 0.012637491013322557}
+pipeline_id: T2F87E3UBVD8EP58, pipeline_inference_times: {'start': 1778504413.139328, 'finish': 1778504433.449113, 'for_all': 20.30978488922119, 'per_sample': 0.0036267473016466413}
+pipeline_id: VORJ7T16CUEMLFCI, pipeline_inference_times: {'start': 1778504433.458929, 'finish': 1778504494.0651824, 'for_all': 60.60625338554382, 'per_sample': 0.01082254524741854}
+pipeline_id: WHY0DF76MJEV8K3S, pipeline_inference_times: {'start': 1778504494.1009357, 'finish': 1778504593.4139056, 'for_all': 99.31296992301941, 'per_sample': 0.017734458914824894}
+pipeline_id: XNM4FNEXYHHOFHOZ, pipeline_inference_times: {'start': 1778504593.4206839, 'finish': 1778504736.346634, 'for_all': 142.925950050354, 'per_sample': 0.02552249108042036}
+pipeline_id: Y2KVR1FMOHOE3RK7, pipeline_inference_times: {'start': 1778504736.3603768, 'finish': 1778504793.3125818, 'for_all': 56.95220494270325, 'per_sample': 0.010170036596911293}
+pipeline_id: ZQ8HMXUVKFLEK5ZM, pipeline_inference_times: {'start': 1778504794.0942068, 'finish': 1778504807.2817194, 'for_all': 13.187512636184692, 'per_sample': 0.0023549129707472667}
+pipeline_id: for_pipeline_set, pipeline_inference_times: {'start': 1778499432.9125497, 'finish': 1778504807.2817194, 'for_all': 5372.4289219379425, 'per_sample': 0.9593623074889183}
+Вычислено значение score для закрытых данных (score_closed) для ансамбля из этого набора пайплайнов. score_type: roc_auc_score, score_closed: 0.9883044642857143
+
+================
